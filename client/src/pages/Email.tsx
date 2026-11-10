@@ -26,6 +26,15 @@ import {
   Check,
   ChevronDown,
 } from 'lucide-react';
+import {
+  BarChart,
+  Bar,
+  ResponsiveContainer,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip as RechartsTooltip,
+} from 'recharts';
 import api from '../api/axios';
 import toast from 'react-hot-toast';
 import StatCard from '../components/ui/StatCard';
@@ -724,43 +733,57 @@ export default function Email() {
               </div>
 
               {/* Chart Visual */}
-              <div className="h-56 flex items-end justify-between gap-3 pt-6 border-b border-[#426557]/15">
+              <div className="h-60 w-full pt-2">
                 {stats?.dailyActivity && stats.dailyActivity.length > 0 ? (
-                  stats.dailyActivity.map((day, idx) => {
-                    const maxVal = Math.max(...stats.dailyActivity.map((d) => d.sent), 10);
-                    const deliveredHeight = Math.min(100, Math.round((day.delivered / maxVal) * 100));
-                    const failedHeight = Math.min(100, Math.round((day.failed / maxVal) * 100));
-
-                    return (
-                      <div key={idx} className="flex-1 flex flex-col items-center h-full justify-end group">
-                        <div className="relative w-full flex items-end justify-center gap-1">
-                          {/* Delivered Bar */}
-                          <div
-                            style={{ height: `${Math.max(deliveredHeight, 6)}%` }}
-                            className="w-full max-w-[28px] bg-[#013A2B] group-hover:bg-[#426557] rounded-t-md transition-all relative"
-                          >
-                            <div className="absolute -top-7 left-1/2 -translate-x-1/2 hidden group-hover:block bg-[#0C2D26] text-white text-[10px] py-0.5 px-1.5 rounded whitespace-nowrap z-10 shadow">
-                              {day.delivered} delivered
-                            </div>
-                          </div>
-                          {/* Failed Bar (if any) */}
-                          {day.failed > 0 && (
-                            <div
-                              style={{ height: `${Math.max(failedHeight, 6)}%` }}
-                              className="w-full max-w-[12px] bg-red-400 rounded-t-md relative"
-                            >
-                              <div className="absolute -top-7 left-1/2 -translate-x-1/2 hidden group-hover:block bg-red-800 text-white text-[10px] py-0.5 px-1.5 rounded whitespace-nowrap z-10 shadow">
-                                {day.failed} failed
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                        <span className="text-[11px] font-semibold text-[#426557] mt-3 group-hover:text-[#013A2B]">
-                          {day.date}
-                        </span>
-                      </div>
-                    );
-                  })
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart
+                      data={stats.dailyActivity}
+                      margin={{ top: 15, right: 10, left: -20, bottom: 5 }}
+                    >
+                      <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" vertical={false} />
+                      <XAxis
+                        dataKey="date"
+                        tick={{ fontSize: 11, fill: '#475569', fontWeight: 600 }}
+                        axisLine={{ stroke: '#cbd5e1' }}
+                        tickLine={false}
+                      />
+                      <YAxis
+                        tick={{ fontSize: 11, fill: '#64748b' }}
+                        axisLine={{ stroke: '#cbd5e1' }}
+                        tickLine={false}
+                        allowDecimals={false}
+                      />
+                      <RechartsTooltip
+                        formatter={(val: any, name: any) => [
+                          `${val} Emails`,
+                          name === 'delivered' ? 'Delivered' : 'Failed',
+                        ]}
+                        labelFormatter={(label) => `Activity on ${label}`}
+                        contentStyle={{
+                          borderRadius: '12px',
+                          border: '1px solid #cbd5e1',
+                          fontSize: '12px',
+                          boxShadow: '0 4px 14px rgba(0,0,0,0.08)',
+                          background: '#FFFFFF',
+                          fontWeight: 500,
+                        }}
+                      />
+                      <Bar
+                        dataKey="delivered"
+                        name="Delivered"
+                        fill="#059669"
+                        radius={[6, 6, 0, 0]}
+                        maxBarSize={36}
+                      />
+                      <Bar
+                        dataKey="failed"
+                        name="Failed"
+                        fill="#EF4444"
+                        radius={[6, 6, 0, 0]}
+                        maxBarSize={20}
+                      />
+                    </BarChart>
+                  </ResponsiveContainer>
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-xs text-[#426557]">
                     No email activity recorded in the last 7 days.
