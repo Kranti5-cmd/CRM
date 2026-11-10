@@ -1,0 +1,47 @@
+[
+  {
+    "_id": "6aed6e9aac74975b19f0e706",
+    "ticketNumber": "TICK-1001",
+    "subject": "SSO Authentication Timeout on Mobile",
+    "description": "Users on Android devices report 504 Gateway Timeout when authenticating via corporate Okta SSO.",
+    "customerName": "Robert Martinez",
+    "customerEmail": "robert@techflow.com",
+    "category": "Technical Issue",
+    "priority": "High",
+    "status": "In Progress",
+    "resolutionNotes": "",
+    "createdAt": "2026-11-06T06:07:22.964Z",
+    "updatedAt": "2026-11-06T06:07:22.964Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aed6e9bac74975b19f0e708",
+    "ticketNumber": "TICK-1002",
+    "subject": "Annual License Renewal Billing Invoice",
+    "description": "Requested updated PDF receipt including tax identifier for Q3 accounting review.",
+    "customerName": "Jennifer Lee",
+    "customerEmail": "jennifer@greenleaf.com",
+    "category": "Billing",
+    "priority": "Medium",
+    "status": "Open",
+    "resolutionNotes": "",
+    "createdAt": "2026-11-06T06:07:23.015Z",
+    "updatedAt": "2026-11-06T06:07:23.015Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aed6e9bac74975b19f0e70a",
+    "ticketNumber": "TICK-1003",
+    "subject": "Custom Data Export CSV Request",
+    "description": "Assistance needed to automate weekly exports into AWS S3 bucket.",
+    "customerName": "David Thompson",
+    "customerEmail": "david@pinnaclefg.com",
+    "category": "Service Request",
+    "priority": "Low",
+    "status": "Resolved",
+    "resolutionNotes": "Provided webhook configuration guide and verified successful payload dispatch.",
+    "createdAt": "2026-11-06T06:07:23.025Z",
+    "updatedAt": "2026-11-06T06:07:23.025Z",
+    "__v": 0
+  }
+]

@@ -1,0 +1,267 @@
+[
+  {
+    "_id": "6aed6b142822df5d0044f090",
+    "type": "deal_update",
+    "description": "Deal \"TechFlow Enterprise License\" was won",
+    "user": "6aed6b142822df5d0044f029",
+    "relatedDeal": "6aed6b142822df5d0044f063",
+    "createdAt": "2026-10-25T05:52:20.914Z",
+    "__v": 0,
+    "updatedAt": "2026-11-06T05:52:20.916Z"
+  },
+  {
+    "_id": "6aed6b142822df5d0044f091",
+    "type": "lead_update",
+    "description": "Lead \"Emma Sullivan\" converted to customer",
+    "user": "6aed6b142822df5d0044f029",
+    "relatedLead": "6aed6b142822df5d0044f04a",
+    "createdAt": "2026-08-18T05:52:20.914Z",
+    "__v": 0,
+    "updatedAt": "2026-11-06T05:52:20.916Z"
+  },
+  {
+    "_id": "6aed6b142822df5d0044f092",
+    "type": "call",
+    "description": "Discovery call with Sophia Zhang - 30 min",
+    "user": "6aed6b142822df5d0044f02a",
+    "relatedLead": "6aed6b142822df5d0044f046",
+    "createdAt": "2026-10-29T05:52:20.914Z",
+    "__v": 0,
+    "updatedAt": "2026-11-06T05:52:20.916Z"
+  },
+  {
+    "_id": "6aed6b142822df5d0044f093",
+    "type": "email",
+    "description": "Sent pricing proposal to Nathan Brooks",
+    "user": "6aed6b142822df5d0044f02b",
+    "relatedLead": "6aed6b142822df5d0044f049",
+    "createdAt": "2026-11-01T05:52:20.914Z",
+    "__v": 0,
+    "updatedAt": "2026-11-06T05:52:20.916Z"
+  },
+  {
+    "_id": "6aed6b142822df5d0044f094",
+    "type": "meeting",
+    "description": "Demo meeting with Marcus Johnson - interested in premium tier",
+    "user": "6aed6b142822df5d0044f029",
+    "relatedLead": "6aed6b142822df5d0044f047",
+    "createdAt": "2026-10-17T05:52:20.914Z",
+    "__v": 0,
+    "updatedAt": "2026-11-06T05:52:20.916Z"
+  },
+  {
+    "_id": "6aed6b142822df5d0044f095",
+    "type": "deal_update",
+    "description": "Deal \"CloudNine Marketing Suite\" was won",
+    "user": "6aed6b142822df5d0044f029",
+    "relatedDeal": "6aed6b142822df5d0044f066",
+    "createdAt": "2026-10-09T05:52:20.914Z",
+    "__v": 0,
+    "updatedAt": "2026-11-06T05:52:20.916Z"
+  },
+  {
+    "_id": "6aed6b142822df5d0044f096",
+    "type": "note",
+    "description": "Olivia Foster requested custom integration - needs technical review",
+    "user": "6aed6b142822df5d0044f028",
+    "relatedLead": "6aed6b142822df5d0044f048",
+    "createdAt": "2026-10-22T05:52:20.914Z",
+    "__v": 0,
+    "updatedAt": "2026-11-06T05:52:20.916Z"
+  },
+  {
+    "_id": "6aed6b142822df5d0044f097",
+    "type": "deal_update",
+    "description": "Deal \"GreenLeaf ERP\" moved to Negotiation",
+    "user": "6aed6b142822df5d0044f02a",
+    "relatedDeal": "6aed6b142822df5d0044f064",
+    "createdAt": "2026-10-27T05:52:20.914Z",
+    "__v": 0,
+    "updatedAt": "2026-11-06T05:52:20.916Z"
+  },
+  {
+    "_id": "6aed6b142822df5d0044f098",
+    "type": "call",
+    "description": "Follow-up call with Daniel Moore about property management",
+    "user": "6aed6b142822df5d0044f02b",
+    "relatedContact": "6aed6b142822df5d0044f03e",
+    "createdAt": "2026-11-03T05:52:20.914Z",
+    "__v": 0,
+    "updatedAt": "2026-11-06T05:52:20.916Z"
+  },
+  {
+    "_id": "6aed6b142822df5d0044f099",
+    "type": "deal_update",
+    "description": "Deal \"Quantum LMS Platform\" was won",
+    "user": "6aed6b142822df5d0044f029",
+    "relatedDeal": "6aed6b142822df5d0044f069",
+    "createdAt": "2026-09-09T05:52:20.914Z",
+    "__v": 0,
+    "updatedAt": "2026-11-06T05:52:20.916Z"
+  },
+  {
+    "_id": "6aed6b142822df5d0044f09a",
+    "type": "email",
+    "description": "Sent onboarding docs to NovaByte team",
+    "user": "6aed6b142822df5d0044f02a",
+    "relatedDeal": "6aed6b142822df5d0044f06c",
+    "createdAt": "2026-08-13T05:52:20.914Z",
+    "__v": 0,
+    "updatedAt": "2026-11-06T05:52:20.916Z"
+  },
+  {
+    "_id": "6aed6b142822df5d0044f09b",
+    "type": "meeting",
+    "description": "Strategy session with Apex Consulting team",
+    "user": "6aed6b142822df5d0044f028",
+    "relatedDeal": "6aed6b142822df5d0044f06a",
+    "createdAt": "2026-10-30T05:52:20.914Z",
+    "__v": 0,
+    "updatedAt": "2026-11-06T05:52:20.916Z"
+  },
+  {
+    "_id": "6aed6b142822df5d0044f09c",
+    "type": "lead_update",
+    "description": "New lead \"Alex Rivera\" created",
+    "user": "6aed6b142822df5d0044f029",
+    "relatedLead": "6aed6b142822df5d0044f045",
+    "createdAt": "2026-11-03T05:52:20.914Z",
+    "__v": 0,
+    "updatedAt": "2026-11-06T05:52:20.916Z"
+  },
+  {
+    "_id": "6aed6b142822df5d0044f09d",
+    "type": "deal_update",
+    "description": "Deal \"Skyline Tenant App\" was won",
+    "user": "6aed6b142822df5d0044f02b",
+    "relatedDeal": "6aed6b142822df5d0044f074",
+    "createdAt": "2026-10-23T05:52:20.914Z",
+    "__v": 0,
+    "updatedAt": "2026-11-06T05:52:20.916Z"
+  },
+  {
+    "_id": "6aed6b142822df5d0044f09e",
+    "type": "lead_update",
+    "description": "Lead \"Ella Phillips\" converted to customer",
+    "user": "6aed6b142822df5d0044f028",
+    "relatedLead": "6aed6b142822df5d0044f058",
+    "createdAt": "2026-07-09T05:52:20.914Z",
+    "__v": 0,
+    "updatedAt": "2026-11-06T05:52:20.916Z"
+  },
+  {
+    "_id": "6aed6b142822df5d0044f09f",
+    "type": "task",
+    "description": "Completed onboarding for Emma Sullivan",
+    "user": "6aed6b142822df5d0044f029",
+    "createdAt": "2026-10-28T05:52:20.914Z",
+    "__v": 0,
+    "updatedAt": "2026-11-06T05:52:20.916Z"
+  },
+  {
+    "_id": "6aed6b142822df5d0044f0a0",
+    "type": "call",
+    "description": "Negotiation call with Skyline Properties - agreed on terms",
+    "user": "6aed6b142822df5d0044f02b",
+    "relatedDeal": "6aed6b142822df5d0044f06b",
+    "createdAt": "2026-11-02T05:52:20.914Z",
+    "__v": 0,
+    "updatedAt": "2026-11-06T05:52:20.916Z"
+  },
+  {
+    "_id": "6aed6b142822df5d0044f0a1",
+    "type": "email",
+    "description": "Sent follow-up email to Charlotte Evans",
+    "user": "6aed6b142822df5d0044f028",
+    "relatedLead": "6aed6b142822df5d0044f052",
+    "createdAt": "2026-10-19T05:52:20.914Z",
+    "__v": 0,
+    "updatedAt": "2026-11-06T05:52:20.916Z"
+  },
+  {
+    "_id": "6aed6b142822df5d0044f0a2",
+    "type": "deal_update",
+    "description": "Deal \"TechFlow Support Contract\" was won",
+    "user": "6aed6b142822df5d0044f029",
+    "relatedDeal": "6aed6b142822df5d0044f06d",
+    "createdAt": "2026-09-24T05:52:20.914Z",
+    "__v": 0,
+    "updatedAt": "2026-11-06T05:52:20.916Z"
+  },
+  {
+    "_id": "6aed6b142822df5d0044f0a3",
+    "type": "deal_update",
+    "description": "Deal \"NovaByte MVP\" was won",
+    "user": "6aed6b142822df5d0044f02a",
+    "relatedDeal": "6aed6b142822df5d0044f06c",
+    "createdAt": "2026-08-10T05:52:20.914Z",
+    "__v": 0,
+    "updatedAt": "2026-11-06T05:52:20.916Z"
+  },
+  {
+    "_id": "6aed6e9aac74975b19f0e707",
+    "type": "note",
+    "description": "New support ticket TICK-1001 created: \"SSO Authentication Timeout on Mobile\"",
+    "user": "6aed6c2d3f935186c3e96958",
+    "metadata": {
+      "action": "ticket_created",
+      "ticketId": "6aed6e9aac74975b19f0e706"
+    },
+    "createdAt": "2026-11-06T06:07:22.972Z",
+    "updatedAt": "2026-11-06T06:07:22.972Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aed6e9bac74975b19f0e709",
+    "type": "note",
+    "description": "New support ticket TICK-1002 created: \"Annual License Renewal Billing Invoice\"",
+    "user": "6aed6c2d3f935186c3e96958",
+    "metadata": {
+      "action": "ticket_created",
+      "ticketId": "6aed6e9bac74975b19f0e708"
+    },
+    "createdAt": "2026-11-06T06:07:23.018Z",
+    "updatedAt": "2026-11-06T06:07:23.018Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aed6e9bac74975b19f0e70b",
+    "type": "note",
+    "description": "New support ticket TICK-1003 created: \"Custom Data Export CSV Request\"",
+    "user": "6aed6c2d3f935186c3e96958",
+    "metadata": {
+      "action": "ticket_created",
+      "ticketId": "6aed6e9bac74975b19f0e70a"
+    },
+    "createdAt": "2026-11-06T06:07:23.027Z",
+    "updatedAt": "2026-11-06T06:07:23.027Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aed7a6d26f2c996c4a0971e",
+    "type": "deal_update",
+    "description": "New deal \"Hiring\" was created with value $7,00,000",
+    "user": "6aed6b142822df5d0044f028",
+    "relatedDeal": "6aed7a6d26f2c996c4a0971d",
+    "metadata": {
+      "action": "created",
+      "value": 700000
+    },
+    "createdAt": "2026-11-06T06:57:49.992Z",
+    "updatedAt": "2026-11-06T06:57:49.992Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aed7f5026f2c996c4a09720",
+    "type": "lead_update",
+    "description": "New lead \"chani\" was created",
+    "user": "6aed6b142822df5d0044f028",
+    "relatedLead": "6aed7f5026f2c996c4a0971f",
+    "metadata": {
+      "action": "created"
+    },
+    "createdAt": "2026-11-06T07:18:40.066Z",
+    "updatedAt": "2026-11-06T07:18:40.066Z",
+    "__v": 0
+  }
+]
