@@ -25,7 +25,7 @@ function emailShell({ badge, subtitle, greeting, bodyHtml, ctaText = 'Open Stude
     <tr>
       <td style="background:linear-gradient(135deg, #013A2B 0%, #064E3B 60%, #047857 100%);padding:36px 32px 32px;text-align:left;">
         <span style="display:inline-block;padding:4px 12px;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.2);border-radius:20px;font-size:11px;font-weight:700;letter-spacing:0.8px;color:#A7F3D0;text-transform:uppercase;">✦ ${badge}</span>
-        <h1 style="margin:12px 0 4px;font-size:26px;font-weight:800;letter-spacing:-0.5px;color:#FFFFFF;line-height:1.2;">CODE Lekho</h1>
+        <h1 style="margin:12px 0 4px;font-size:26px;font-weight:800;letter-spacing:-0.5px;color:#FFFFFF;line-height:1.2;">CodeLekho</h1>
         <p style="margin:0;font-size:13px;color:#D1FAE5;font-weight:500;letter-spacing:0.2px;">${subtitle}</p>
       </td>
     </tr>
@@ -52,9 +52,9 @@ function emailShell({ badge, subtitle, greeting, bodyHtml, ctaText = 'Open Stude
     <!-- FOOTER -->
     <tr>
       <td style="padding:24px 32px;background:#F8FAFC;border-top:1px solid #E2E8F0;text-align:center;">
-        <p style="margin:0 0 6px;font-size:12px;font-weight:600;color:#475569;">CODE Lekho • Empowering Next-Gen Developers</p>
+        <p style="margin:0 0 6px;font-size:12px;font-weight:600;color:#475569;">CodeLekho • Empowering Next-Gen Developers</p>
         <p style="margin:0 0 8px;font-size:11px;color:#94A3B8;">Arshith Group • Bengaluru, Karnataka • support@arshithgroup.com</p>
-        <p style="margin:0;font-size:11px;color:#94A3B8;">You received this email because you are a registered learner at CODE Lekho.</p>
+        <p style="margin:0;font-size:11px;color:#94A3B8;">You received this email because you are a registered learner at CodeLekho.</p>
       </td>
     </tr>
   </table>
@@ -65,7 +65,7 @@ function emailShell({ badge, subtitle, greeting, bodyHtml, ctaText = 'Open Stude
 const defaultTemplates = [
   {
     name: 'New Student Welcome Email',
-    subject: 'Welcome to CODE Lekho, {{student_name}}! 🚀',
+    subject: 'Welcome to CodeLekho, {{student_name}}! 🚀',
     category: 'Student Onboarding',
     htmlContent: emailShell({
       badge: 'OFFICIAL ADMISSION',
@@ -73,7 +73,7 @@ const defaultTemplates = [
       greeting: 'Welcome {{student_name}}!',
       bodyHtml: `
         <p style="margin:0 0 20px;font-size:15px;color:#334155;line-height:1.7;">
-          We are thrilled to welcome you to <strong>{{course_name}}</strong> at <strong>CODE Lekho</strong>! Your registration on {{registration_date}} has been confirmed and verified.
+          We are thrilled to welcome you to <strong>{{course_name}}</strong> at <strong>CodeLekho</strong>! Your registration on {{registration_date}} has been confirmed and verified.
         </p>
 
         <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-left:4px solid #047857;border-radius:12px;padding:20px;margin:24px 0;">
@@ -112,7 +112,7 @@ const defaultTemplates = [
   },
   {
     name: 'Registration Confirmation',
-    subject: 'Registration Confirmed: {{course_name}} | CODE Lekho',
+    subject: 'Registration Confirmed: {{course_name}} | CodeLekho',
     category: 'Student Onboarding',
     htmlContent: emailShell({
       badge: 'ENROLLMENT CONFIRMED',
@@ -120,7 +120,7 @@ const defaultTemplates = [
       greeting: 'Welcome {{student_name}}!',
       bodyHtml: `
         <p style="margin:0 0 20px;font-size:15px;color:#334155;line-height:1.7;">
-          Your enrollment in <strong>{{course_name}}</strong> is officially recorded in the <strong>CODE Lekho</strong> system on {{registration_date}}.
+          Your enrollment in <strong>{{course_name}}</strong> is officially recorded in the <strong>CodeLekho</strong> system on {{registration_date}}.
         </p>
 
         <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-left:4px solid #047857;border-radius:12px;padding:20px;margin:24px 0;">
@@ -147,11 +147,11 @@ const defaultTemplates = [
       ctaText: 'Open Course Overview',
       ctaUrl: 'https://arshithbootcamp.com'
     }),
-    bodyText: 'Hi {{student_name}}, your registration for {{course_name}} at CODE Lekho is confirmed.'
+    bodyText: 'Hi {{student_name}}, your registration for {{course_name}} at CodeLekho is confirmed.'
   },
   {
     name: 'Course Information Email',
-    subject: 'Curriculum & Schedule for {{course_name}} | CODE Lekho',
+    subject: 'Curriculum & Schedule for {{course_name}} | CodeLekho',
     category: 'Course Notification',
     htmlContent: emailShell({
       badge: 'CURRICULUM ROADMAP',
@@ -159,7 +159,7 @@ const defaultTemplates = [
       greeting: 'Hi {{student_name}},',
       bodyHtml: `
         <p style="margin:0 0 20px;font-size:15px;color:#334155;line-height:1.7;">
-          Here is your comprehensive syllabus roadmap for <strong>{{course_name}}</strong> at CODE Lekho.
+          Here is your comprehensive syllabus roadmap for <strong>{{course_name}}</strong> at CodeLekho.
         </p>
 
         <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:12px;padding:20px;margin:20px 0;">
@@ -175,11 +175,11 @@ const defaultTemplates = [
       ctaText: 'Download Syllabus',
       ctaUrl: 'https://arshithbootcamp.com'
     }),
-    bodyText: 'Here is your syllabus for {{course_name}} at CODE Lekho.'
+    bodyText: 'Here is your syllabus for {{course_name}} at CodeLekho.'
   },
   {
     name: 'Payment Pending Reminder',
-    subject: 'Action Required: Complete your enrollment in {{course_name}} | CODE Lekho',
+    subject: 'Action Required: Complete your enrollment in {{course_name}} | CodeLekho',
     category: 'Billing & Payment',
     htmlContent: emailShell({
       badge: 'FEE PAYMENT PENDING',
@@ -197,11 +197,11 @@ const defaultTemplates = [
       ctaText: 'Complete Payment Securely',
       ctaUrl: 'https://arshithbootcamp.com'
     }),
-    bodyText: 'Payment pending for {{course_name}} at CODE Lekho. Status: {{payment_status}}.'
+    bodyText: 'Payment pending for {{course_name}} at CodeLekho. Status: {{payment_status}}.'
   },
   {
     name: 'Payment Confirmation',
-    subject: 'Payment Successful: Receipt for {{course_name}} | CODE Lekho',
+    subject: 'Payment Successful: Receipt for {{course_name}} | CodeLekho',
     category: 'Billing & Payment',
     htmlContent: emailShell({
       badge: 'FEE RECEIPT',
@@ -232,11 +232,11 @@ const defaultTemplates = [
       ctaText: 'Access Student Classroom',
       ctaUrl: 'https://arshithbootcamp.com'
     }),
-    bodyText: 'Payment received for {{course_name}} at CODE Lekho. Thank you!'
+    bodyText: 'Payment received for {{course_name}} at CodeLekho. Thank you!'
   },
   {
     name: 'Course Starting Reminder',
-    subject: 'Reminder: {{course_name}} starts on {{course_start_date}} | CODE Lekho',
+    subject: 'Reminder: {{course_name}} starts on {{course_start_date}} | CodeLekho',
     category: 'Course Notification',
     htmlContent: emailShell({
       badge: 'BATCH KICKOFF',
@@ -250,7 +250,7 @@ const defaultTemplates = [
         <div style="background:#ECFDF5;border:1px solid #A7F3D0;border-radius:12px;padding:20px;margin:20px 0;">
           <p style="margin:0 0 8px;font-size:14px;font-weight:700;color:#065F46;">⏰ Kickoff Checklist:</p>
           <ul style="margin:0;padding-left:20px;font-size:13px;color:#047857;line-height:1.7;">
-            <li>Log into your CODE Lekho dashboard 15 minutes before the session</li>
+            <li>Log into your CodeLekho dashboard 15 minutes before the session</li>
             <li>Verify your IDE and browser setup</li>
             <li>Have your notebooks ready for hands-on live code demos</li>
           </ul>
@@ -259,11 +259,11 @@ const defaultTemplates = [
       ctaText: 'Join Live Session',
       ctaUrl: 'https://arshithbootcamp.com'
     }),
-    bodyText: '{{course_name}} begins on {{course_start_date}} at CODE Lekho.'
+    bodyText: '{{course_name}} begins on {{course_start_date}} at CodeLekho.'
   },
   {
     name: 'Follow-up Reminder',
-    subject: 'Following up on your counseling session | CODE Lekho',
+    subject: 'Following up on your counseling session | CodeLekho',
     category: 'Student Engagement',
     htmlContent: emailShell({
       badge: 'ACADEMIC COUNSELING',
@@ -280,11 +280,11 @@ const defaultTemplates = [
       ctaText: 'Connect With Advisor',
       ctaUrl: 'https://arshithbootcamp.com'
     }),
-    bodyText: 'Following up on {{course_name}} at CODE Lekho.'
+    bodyText: 'Following up on {{course_name}} at CodeLekho.'
   },
   {
     name: 'Student Re-engagement',
-    subject: 'We miss you at CODE Lekho! Resume {{course_name}}',
+    subject: 'We miss you at CodeLekho! Resume {{course_name}}',
     category: 'Student Engagement',
     htmlContent: emailShell({
       badge: 'CONTINUE LEARNING',
@@ -302,7 +302,7 @@ const defaultTemplates = [
   },
   {
     name: 'Course Completion Email',
-    subject: 'Congratulations on completing {{course_name}}! 🎓 | CODE Lekho',
+    subject: 'Congratulations on completing {{course_name}}! 🎓 | CodeLekho',
     category: 'Course Notification',
     htmlContent: emailShell({
       badge: 'COURSE COMPLETED',
@@ -310,17 +310,17 @@ const defaultTemplates = [
       greeting: 'Congratulations {{student_name}}! 🎉',
       bodyHtml: `
         <p style="margin:0 0 20px;font-size:15px;color:#334155;line-height:1.7;">
-          You have successfully completed <strong>{{course_name}}</strong> at <strong>CODE Lekho</strong>! Your verifiable certificate with secure QR code validation is available for download on your student portal.
+          You have successfully completed <strong>{{course_name}}</strong> at <strong>CodeLekho</strong>! Your verifiable certificate with secure QR code validation is available for download on your student portal.
         </p>
       `,
       ctaText: 'View & Share Certificate',
       ctaUrl: 'https://arshithbootcamp.com'
     }),
-    bodyText: 'Congratulations on completing {{course_name}} at CODE Lekho!'
+    bodyText: 'Congratulations on completing {{course_name}} at CodeLekho!'
   },
   {
     name: 'Student Feedback Request',
-    subject: 'How was your experience with {{course_name}}? | CODE Lekho',
+    subject: 'How was your experience with {{course_name}}? | CodeLekho',
     category: 'Feedback',
     htmlContent: emailShell({
       badge: 'FEEDBACK & REVIEW',
@@ -334,19 +334,19 @@ const defaultTemplates = [
       ctaText: 'Give Quick Feedback',
       ctaUrl: 'https://arshithbootcamp.com/feedback'
     }),
-    bodyText: 'Please share your feedback for {{course_name}} at CODE Lekho.'
+    bodyText: 'Please share your feedback for {{course_name}} at CodeLekho.'
   }
 ];
 
 const workflowConfigs = [
   { name: '1. New Student Welcome Flow', triggerEvent: 'student_registered', templateName: 'New Student Welcome Email', segment: 'New Registrations', delayHours: 0 },
   { name: '2. Registration Confirmation Flow', triggerEvent: 'registration_confirmed', templateName: 'Registration Confirmation', segment: 'Converted Students', delayHours: 0 },
-  { name: '3. Course Information Flow', triggerEvent: 'course_enrolled', templateName: 'Course Information Email', segment: 'CODE Lekho Students', delayHours: 24 },
+  { name: '3. Course Information Flow', triggerEvent: 'course_enrolled', templateName: 'Course Information Email', segment: 'CodeLekho Students', delayHours: 24 },
   { name: '4. Payment Pending Reminder Flow', triggerEvent: 'payment_pending', templateName: 'Payment Pending Reminder', segment: 'Pending Payments', delayHours: 48 },
   { name: '5. Payment Confirmation Flow', triggerEvent: 'payment_completed', templateName: 'Payment Confirmation', segment: 'Converted Students', delayHours: 0 },
-  { name: '6. Course Starting Reminder Flow', triggerEvent: 'course_starting_soon', templateName: 'Course Starting Reminder', segment: 'CODE Lekho Students', delayHours: 12 },
+  { name: '6. Course Starting Reminder Flow', triggerEvent: 'course_starting_soon', templateName: 'Course Starting Reminder', segment: 'CodeLekho Students', delayHours: 12 },
   { name: '7. Counselor Follow-up Flow', triggerEvent: 'counselor_followup_needed', templateName: 'Follow-up Reminder', segment: 'Interested Leads', delayHours: 24 },
-  { name: '8. Student Re-engagement Flow', triggerEvent: 'student_inactive_7d', templateName: 'Student Re-engagement', segment: 'CODE Lekho Students', delayHours: 168 },
+  { name: '8. Student Re-engagement Flow', triggerEvent: 'student_inactive_7d', templateName: 'Student Re-engagement', segment: 'CodeLekho Students', delayHours: 168 },
   { name: '9. Course Completion & Certificate Flow', triggerEvent: 'course_completed', templateName: 'Course Completion Email', segment: 'Course Completed Students', delayHours: 0 },
   { name: '10. Student Feedback Request Flow', triggerEvent: 'feedback_request', templateName: 'Student Feedback Request', segment: 'Course Completed Students', delayHours: 72 }
 ];
@@ -390,7 +390,7 @@ async function seed() {
     }
   }
 
-  console.log('All email templates & workflows successfully updated to CODE Lekho format!');
+  console.log('All email templates & workflows successfully updated to CodeLekho format!');
   await mongoose.disconnect();
 }
 

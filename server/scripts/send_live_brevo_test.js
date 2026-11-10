@@ -3,7 +3,7 @@ require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 const brevoService = require('../services/brevoService');
 
 async function testSend() {
-  console.log('Sending live test email via CODE Lekho Brevo Integration...');
+  console.log('Sending live test email via CodeLekho Brevo Integration...');
   const res = await brevoService.sendWelcomeEmail({
     email: 'krantishantveer@gmail.com',
     name: 'Kranti',

@@ -1,5 +1,5 @@
 /**
- * Centralized Brevo Email Integration Service for CODE Lekho
+ * Centralized Brevo Email Integration Service for CodeLekho
  * Integrates CRM with Brevo SMTP API / Direct Cloud Delivery.
  */
 const http = require('http');
@@ -17,7 +17,7 @@ async function sendRequest(endpoint, payload) {
     return new Promise((resolve) => {
       try {
         const senderEmail = process.env.BREVO_SENDER_EMAIL || 'krantishantveer@gmail.com';
-        const senderName = process.env.BREVO_SENDER_NAME || 'CODE Lekho';
+        const senderName = process.env.BREVO_SENDER_NAME || 'CodeLekho';
 
         const postData = JSON.stringify({
           sender: { name: senderName, email: senderEmail },
@@ -131,9 +131,9 @@ async function sendRequest(endpoint, payload) {
 }
 
 /**
- * Modern, High-Conversion Responsive Email Shell for CODE Lekho
+ * Modern, High-Conversion Responsive Email Shell for CodeLekho
  */
-function renderEmailShell({ badge = 'STUDENT ADMISSION', title = 'CODE Lekho', subtitle = 'Learn Today, Build Tomorrow', greeting, bodyHtml, ctaText = 'Access Student Portal', ctaUrl = getPortalUrl() }) {
+function renderEmailShell({ badge = 'STUDENT ADMISSION', title = 'CodeLekho', subtitle = 'Learn Today, Build Tomorrow', greeting, bodyHtml, ctaText = 'Access Student Portal', ctaUrl = getPortalUrl() }) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -150,7 +150,7 @@ function renderEmailShell({ badge = 'STUDENT ADMISSION', title = 'CODE Lekho', s
           <tr>
             <td>
               <span style="display:inline-block;padding:4px 12px;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.2);border-radius:20px;font-size:11px;font-weight:700;letter-spacing:0.8px;color:#A7F3D0;text-transform:uppercase;">✦ ${badge}</span>
-              <h1 style="margin:12px 0 4px;font-size:26px;font-weight:800;letter-spacing:-0.5px;color:#FFFFFF;line-height:1.2;">CODE Lekho</h1>
+              <h1 style="margin:12px 0 4px;font-size:26px;font-weight:800;letter-spacing:-0.5px;color:#FFFFFF;line-height:1.2;">CodeLekho</h1>
               <p style="margin:0;font-size:13px;color:#D1FAE5;font-weight:500;letter-spacing:0.2px;">${subtitle}</p>
             </td>
           </tr>
@@ -180,9 +180,9 @@ function renderEmailShell({ badge = 'STUDENT ADMISSION', title = 'CODE Lekho', s
     <!-- FOOTER -->
     <tr>
       <td style="padding:24px 32px;background:#F8FAFC;border-top:1px solid #E2E8F0;text-align:center;">
-        <p style="margin:0 0 6px;font-size:12px;font-weight:600;color:#475569;">CODE Lekho • Empowering Next-Gen Developers</p>
+        <p style="margin:0 0 6px;font-size:12px;font-weight:600;color:#475569;">CodeLekho • Empowering Next-Gen Developers</p>
         <p style="margin:0 0 8px;font-size:11px;color:#94A3B8;">Arshith Group • Bengaluru, Karnataka • support@arshithgroup.com</p>
-        <p style="margin:0;font-size:11px;color:#94A3B8;">You received this email because you are a registered learner at CODE Lekho.</p>
+        <p style="margin:0;font-size:11px;color:#94A3B8;">You received this email because you are a registered learner at CodeLekho.</p>
       </td>
     </tr>
   </table>
@@ -191,16 +191,16 @@ function renderEmailShell({ badge = 'STUDENT ADMISSION', title = 'CODE Lekho', s
 }
 
 /**
- * 7 Automated Brevo Email Workflows for CODE Lekho
+ * 7 Automated Brevo Email Workflows for CodeLekho
  */
 
 // 1. Student Registration Welcome Email (Greeting: "Welcome <Name>!" - NO "aboard")
 async function sendWelcomeEmail({ email, name, studentId, regNo, courseName = 'Foundations Track' }) {
   const cleanName = (name || 'Student').trim();
-  const subject = `Welcome to CODE Lekho, ${cleanName}! 🚀`;
+  const subject = `Welcome to CodeLekho, ${cleanName}! 🚀`;
   const bodyHtml = `
     <p style="margin:0 0 20px;font-size:15px;color:#334155;line-height:1.7;">
-      Your registration with <strong>CODE Lekho</strong> has been received and successfully verified. We are thrilled to welcome you to our student community!
+      Your registration with <strong>CodeLekho</strong> has been received and successfully verified. We are thrilled to welcome you to our student community!
     </p>
 
     <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-left:4px solid #047857;border-radius:12px;padding:20px;margin:24px 0;">
@@ -257,7 +257,7 @@ async function sendWelcomeEmail({ email, name, studentId, regNo, courseName = 'F
 async function sendRegistrationConfirmation({ email, name, courseName, registrationDate }) {
   const cleanName = (name || 'Student').trim();
   const cName = courseName || 'Foundations Track';
-  const subject = `Registration Confirmed: ${cName} | CODE Lekho`;
+  const subject = `Registration Confirmed: ${cName} | CodeLekho`;
 
   const formattedDate = registrationDate
     ? new Date(registrationDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })
@@ -265,7 +265,7 @@ async function sendRegistrationConfirmation({ email, name, courseName, registrat
 
   const bodyHtml = `
     <p style="margin:0 0 20px;font-size:15px;color:#334155;line-height:1.7;">
-      Congratulations! Your enrollment in <strong>${cName}</strong> is officially confirmed and recorded in the CODE Lekho system.
+      Congratulations! Your enrollment in <strong>${cName}</strong> is officially confirmed and recorded in the CodeLekho system.
     </p>
 
     <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-left:4px solid #047857;border-radius:12px;padding:20px;margin:24px 0;">
@@ -314,11 +314,11 @@ async function sendRegistrationConfirmation({ email, name, courseName, registrat
 async function sendCourseInfoEmail({ email, name, courseName }) {
   const cleanName = (name || 'Student').trim();
   const cName = courseName || 'Foundations Track';
-  const subject = `Curriculum & Course Details: ${cName} | CODE Lekho`;
+  const subject = `Curriculum & Course Details: ${cName} | CodeLekho`;
 
   const bodyHtml = `
     <p style="margin:0 0 20px;font-size:15px;color:#334155;line-height:1.7;">
-      Here is your complete syllabus roadmap and schedule for <strong>${cName}</strong> at CODE Lekho.
+      Here is your complete syllabus roadmap and schedule for <strong>${cName}</strong> at CodeLekho.
     </p>
 
     <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:12px;padding:20px;margin:20px 0;">
@@ -358,7 +358,7 @@ async function sendCourseInfoEmail({ email, name, courseName }) {
 async function sendCourseStartingReminder({ email, name, courseName, startDate }) {
   const cleanName = (name || 'Student').trim();
   const cName = courseName || 'Foundations Track';
-  const subject = `Batch Kickoff Alert: ${cName} Starts Soon! | CODE Lekho`;
+  const subject = `Batch Kickoff Alert: ${cName} Starts Soon! | CodeLekho`;
 
   const bodyHtml = `
     <p style="margin:0 0 20px;font-size:15px;color:#334155;line-height:1.7;">
@@ -368,7 +368,7 @@ async function sendCourseStartingReminder({ email, name, courseName, startDate }
     <div style="background:#ECFDF5;border:1px solid #A7F3D0;border-radius:12px;padding:20px;margin:20px 0;">
       <p style="margin:0 0 8px;font-size:14px;font-weight:700;color:#065F46;">⏰ Kickoff Checklist:</p>
       <ul style="margin:0;padding-left:20px;font-size:13px;color:#047857;line-height:1.7;">
-        <li>Log into your CODE Lekho dashboard 15 minutes before the session</li>
+        <li>Log into your CodeLekho dashboard 15 minutes before the session</li>
         <li>Verify your microphone and IDE setup</li>
         <li>Have your note-taking tool ready for live code walkthroughs</li>
       </ul>
@@ -397,7 +397,7 @@ async function sendCourseStartingReminder({ email, name, courseName, startDate }
 async function sendPaymentReminder({ email, name, courseName, amount }) {
   const cleanName = (name || 'Student').trim();
   const cName = courseName || 'Specialization Track';
-  const subject = `Action Required: Complete Your Enrollment in ${cName} | CODE Lekho`;
+  const subject = `Action Required: Complete Your Enrollment in ${cName} | CodeLekho`;
 
   const bodyHtml = `
     <p style="margin:0 0 20px;font-size:15px;color:#334155;line-height:1.7;">
@@ -430,7 +430,7 @@ async function sendPaymentReminder({ email, name, courseName, amount }) {
 // 6. Follow-up Reminder
 async function sendFollowUpReminder({ email, name, courseName, notes }) {
   const cleanName = (name || 'Student').trim();
-  const subject = `Following Up on Your CODE Lekho Counseling - ${courseName || 'Tech Programs'}`;
+  const subject = `Following Up on Your CodeLekho Counseling - ${courseName || 'Tech Programs'}`;
 
   const bodyHtml = `
     <p style="margin:0 0 16px;font-size:15px;color:#334155;line-height:1.7;">
@@ -463,7 +463,7 @@ async function sendFollowUpReminder({ email, name, courseName, notes }) {
 // 7. Promotional Campaign Emails
 async function sendCampaignEmail({ email, name, campaignTitle, campaignBody }) {
   const cleanName = (name || 'Student').trim();
-  const subject = campaignTitle || 'Announcement from CODE Lekho';
+  const subject = campaignTitle || 'Announcement from CodeLekho';
 
   const bodyHtml = `
     <div style="font-size:15px;color:#334155;line-height:1.7;margin-bottom:20px;">
@@ -473,7 +473,7 @@ async function sendCampaignEmail({ email, name, campaignTitle, campaignBody }) {
 
   const html = renderEmailShell({
     badge: 'SPECIAL ANNOUNCEMENT',
-    subtitle: 'CODE Lekho Tech Community',
+    subtitle: 'CodeLekho Tech Community',
     greeting: `Hi ${cleanName},`,
     bodyHtml,
     ctaText: 'Learn More',
