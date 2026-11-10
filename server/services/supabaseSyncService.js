@@ -174,7 +174,8 @@ async function syncFromSupabase() {
           email,
           name: newLead.fullName,
           studentId: newLead.studentId,
-          regNo: s.regNo
+          regNo: s.regNo,
+          courseName
         }).catch(() => {});
 
         // Instant event-driven automation engine dispatch

@@ -187,7 +187,8 @@ exports.syncStudent = async (req, res) => {
       email: normEmail,
       name: fullName,
       studentId: lead.studentId,
-      regNo: lead.studentId
+      regNo: lead.studentId,
+      courseName: standardCourse
     }).catch(err => console.error('[bootcampController] Welcome email warning:', err.message));
 
     // Trigger full automation engine lifecycle workflows
@@ -634,7 +635,7 @@ exports.triggerBrevoWorkflow = async (req, res) => {
     let result;
     switch (workflow) {
       case 'welcome':
-        result = await brevoService.sendWelcomeEmail({ email, name, studentId: metadata.studentId, regNo: metadata.regNo });
+        result = await brevoService.sendWelcomeEmail({ email, name, studentId: metadata.studentId, regNo: metadata.regNo, courseName: courseName || metadata.courseName || 'Foundations Track' });
         break;
       case 'registration_confirmation':
         result = await brevoService.sendRegistrationConfirmation({ email, name, courseName, registrationDate: metadata.registrationDate });

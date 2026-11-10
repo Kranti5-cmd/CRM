@@ -30,7 +30,7 @@ function renderVariables(text, data = {}) {
     'student_id': data.studentId || 'ARB-STU-001',
     'transaction_id': data.transactionId || `TXN-${Math.random().toString(36).substring(2, 9).toUpperCase()}`,
     'amount': data.amount || '₹4,999',
-    'feedback_link': 'https://arshithbootcamp.com/feedback',
+    'feedback_link': 'https://codelekho.com/feedback',
     'course_duration': data.courseDuration || '12 Weeks (Interactive Live Sessions)',
     'counseling_time': data.counselingTime || 'Today at 4:00 PM IST'
   };

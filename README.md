@@ -69,3 +69,4 @@ The client will start at `http://localhost:5173` and communicate with the backen
 ## 🔒 Security
 - All sensitive environment credentials (`.env`) are strictly excluded from version control.
 - Refer to `server/.env.example` for all configurable environment variables.
+
