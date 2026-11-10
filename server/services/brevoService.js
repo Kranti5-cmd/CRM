@@ -7,6 +7,7 @@ const https = require('https');
 
 const getBaseUrl = () => (process.env.ARSHITH_EMAIL_URL || 'http://localhost:5001/api').replace(/\/+$/, '');
 const getApiKey = () => process.env.ARSHITH_EMAIL_KEY || '';
+const getPortalUrl = () => process.env.STUDENT_PORTAL_URL || 'https://arshithbootcamp.com';
 
 async function sendRequest(endpoint, payload) {
   const brevoApiKey = process.env.BREVO_API_KEY;
@@ -132,7 +133,7 @@ async function sendRequest(endpoint, payload) {
 /**
  * Modern, High-Conversion Responsive Email Shell for CODE Lekho
  */
-function renderEmailShell({ badge = 'STUDENT ADMISSION', title = 'CODE Lekho', subtitle = 'Learn Today, Build Tomorrow', greeting, bodyHtml, ctaText = 'Open Student Portal', ctaUrl = 'https://codelekho.com' }) {
+function renderEmailShell({ badge = 'STUDENT ADMISSION', title = 'CODE Lekho', subtitle = 'Learn Today, Build Tomorrow', greeting, bodyHtml, ctaText = 'Access Student Portal', ctaUrl = getPortalUrl() }) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -223,7 +224,7 @@ async function sendWelcomeEmail({ email, name, studentId, regNo, courseName = 'F
         <tr>
           <td style="padding:6px 0;font-size:13px;color:#64748B;font-weight:600;">Access Portal:</td>
           <td style="padding:6px 0;font-size:14px;color:#047857;font-weight:700;">
-            <a href="https://codelekho.com" style="color:#047857;text-decoration:none;">codelekho.com</a>
+            <a href="${getPortalUrl()}" target="_blank" style="color:#047857;text-decoration:none;">CodeLekho Portal &rarr;</a>
           </td>
         </tr>
       </table>
@@ -240,7 +241,7 @@ async function sendWelcomeEmail({ email, name, studentId, regNo, courseName = 'F
     greeting: `Welcome ${cleanName}!`,
     bodyHtml,
     ctaText: 'Access Student Portal',
-    ctaUrl: 'https://codelekho.com'
+    ctaUrl: getPortalUrl()
   });
 
   return sendRequest('/transactional/send', {
@@ -297,7 +298,7 @@ async function sendRegistrationConfirmation({ email, name, courseName, registrat
     greeting: `Welcome ${cleanName}!`,
     bodyHtml,
     ctaText: 'View Course Syllabus',
-    ctaUrl: 'https://codelekho.com'
+    ctaUrl: getPortalUrl()
   });
 
   return sendRequest('/transactional/send', {
@@ -341,7 +342,7 @@ async function sendCourseInfoEmail({ email, name, courseName }) {
     greeting: `Hi ${cleanName},`,
     bodyHtml,
     ctaText: 'Explore Full Syllabus',
-    ctaUrl: 'https://codelekho.com'
+    ctaUrl: getPortalUrl()
   });
 
   return sendRequest('/transactional/send', {
@@ -380,7 +381,7 @@ async function sendCourseStartingReminder({ email, name, courseName, startDate }
     greeting: `Hi ${cleanName},`,
     bodyHtml,
     ctaText: 'Join Live Classroom',
-    ctaUrl: 'https://codelekho.com'
+    ctaUrl: getPortalUrl()
   });
 
   return sendRequest('/transactional/send', {
@@ -414,7 +415,7 @@ async function sendPaymentReminder({ email, name, courseName, amount }) {
     greeting: `Hi ${cleanName},`,
     bodyHtml,
     ctaText: 'Complete Payment Now',
-    ctaUrl: 'https://codelekho.com'
+    ctaUrl: getPortalUrl()
   });
 
   return sendRequest('/transactional/send', {
@@ -447,7 +448,7 @@ async function sendFollowUpReminder({ email, name, courseName, notes }) {
     greeting: `Hi ${cleanName},`,
     bodyHtml,
     ctaText: 'Book 1-on-1 Guidance Call',
-    ctaUrl: 'https://codelekho.com'
+    ctaUrl: getPortalUrl()
   });
 
   return sendRequest('/transactional/send', {
@@ -476,7 +477,7 @@ async function sendCampaignEmail({ email, name, campaignTitle, campaignBody }) {
     greeting: `Hi ${cleanName},`,
     bodyHtml,
     ctaText: 'Learn More',
-    ctaUrl: 'https://codelekho.com'
+    ctaUrl: getPortalUrl()
   });
 
   return sendRequest('/transactional/send', {

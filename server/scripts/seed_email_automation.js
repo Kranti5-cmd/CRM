@@ -12,7 +12,7 @@ const EmailSubscriber = require('../models/EmailSubscriber');
 const Lead = require('../models/Lead');
 const User = require('../models/User');
 
-function emailShell({ badge, subtitle, greeting, bodyHtml, ctaText = 'Open Student Portal', ctaUrl = 'https://codelekho.com' }) {
+function emailShell({ badge, subtitle, greeting, bodyHtml, ctaText = 'Open Student Portal', ctaUrl = 'https://arshithbootcamp.com' }) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,7 +95,7 @@ const defaultTemplates = [
             <tr>
               <td style="padding:6px 0;font-size:13px;color:#64748B;font-weight:600;">Learning Portal:</td>
               <td style="padding:6px 0;font-size:14px;color:#047857;font-weight:700;">
-                <a href="https://codelekho.com" style="color:#047857;text-decoration:none;">codelekho.com</a>
+                <a href="https://arshithbootcamp.com" target="_blank" style="color:#047857;text-decoration:none;">CodeLekho Portal &rarr;</a>
               </td>
             </tr>
           </table>
@@ -106,9 +106,9 @@ const defaultTemplates = [
         </p>
       `,
       ctaText: 'Access Student Portal',
-      ctaUrl: 'https://codelekho.com'
+      ctaUrl: 'https://arshithbootcamp.com'
     }),
-    bodyText: 'Welcome {{student_name}}! You are enrolled in {{course_name}}. Access your portal at https://codelekho.com'
+    bodyText: 'Welcome {{student_name}}! You are enrolled in {{course_name}}. Access your portal at https://arshithbootcamp.com'
   },
   {
     name: 'Registration Confirmation',
@@ -145,7 +145,7 @@ const defaultTemplates = [
         </p>
       `,
       ctaText: 'Open Course Overview',
-      ctaUrl: 'https://codelekho.com'
+      ctaUrl: 'https://arshithbootcamp.com'
     }),
     bodyText: 'Hi {{student_name}}, your registration for {{course_name}} at CODE Lekho is confirmed.'
   },
@@ -173,7 +173,7 @@ const defaultTemplates = [
         </div>
       `,
       ctaText: 'Download Syllabus',
-      ctaUrl: 'https://codelekho.com'
+      ctaUrl: 'https://arshithbootcamp.com'
     }),
     bodyText: 'Here is your syllabus for {{course_name}} at CODE Lekho.'
   },
@@ -195,7 +195,7 @@ const defaultTemplates = [
         </p>
       `,
       ctaText: 'Complete Payment Securely',
-      ctaUrl: 'https://codelekho.com'
+      ctaUrl: 'https://arshithbootcamp.com'
     }),
     bodyText: 'Payment pending for {{course_name}} at CODE Lekho. Status: {{payment_status}}.'
   },
@@ -230,7 +230,7 @@ const defaultTemplates = [
         </div>
       `,
       ctaText: 'Access Student Classroom',
-      ctaUrl: 'https://codelekho.com'
+      ctaUrl: 'https://arshithbootcamp.com'
     }),
     bodyText: 'Payment received for {{course_name}} at CODE Lekho. Thank you!'
   },
@@ -257,7 +257,7 @@ const defaultTemplates = [
         </div>
       `,
       ctaText: 'Join Live Session',
-      ctaUrl: 'https://codelekho.com'
+      ctaUrl: 'https://arshithbootcamp.com'
     }),
     bodyText: '{{course_name}} begins on {{course_start_date}} at CODE Lekho.'
   },
@@ -278,7 +278,7 @@ const defaultTemplates = [
         </p>
       `,
       ctaText: 'Connect With Advisor',
-      ctaUrl: 'https://codelekho.com'
+      ctaUrl: 'https://arshithbootcamp.com'
     }),
     bodyText: 'Following up on {{course_name}} at CODE Lekho.'
   },
@@ -296,9 +296,9 @@ const defaultTemplates = [
         </p>
       `,
       ctaText: 'Resume My Course',
-      ctaUrl: 'https://codelekho.com'
+      ctaUrl: 'https://arshithbootcamp.com'
     }),
-    bodyText: 'Resume {{course_name}} at https://codelekho.com'
+    bodyText: 'Resume {{course_name}} at https://arshithbootcamp.com'
   },
   {
     name: 'Course Completion Email',
@@ -314,7 +314,7 @@ const defaultTemplates = [
         </p>
       `,
       ctaText: 'View & Share Certificate',
-      ctaUrl: 'https://codelekho.com'
+      ctaUrl: 'https://arshithbootcamp.com'
     }),
     bodyText: 'Congratulations on completing {{course_name}} at CODE Lekho!'
   },
@@ -332,7 +332,7 @@ const defaultTemplates = [
         </p>
       `,
       ctaText: 'Give Quick Feedback',
-      ctaUrl: 'https://codelekho.com/feedback'
+      ctaUrl: 'https://arshithbootcamp.com/feedback'
     }),
     bodyText: 'Please share your feedback for {{course_name}} at CODE Lekho.'
   }
