@@ -42,6 +42,55 @@ import { useAuth } from '../hooks/useAuth';
 import { formatCurrency, formatDate } from '../utils/formatters';
 import LoadingSpinner from '../components/ui/LoadingSpinner';
 
+const COURSE_PALETTE: Record<string, { fill: string; lightBg: string; border: string; text: string }> = {
+  'Foundations Track': {
+    fill: '#6366F1', // Indigo
+    lightBg: 'bg-indigo-50',
+    border: 'border-indigo-200',
+    text: 'text-indigo-700',
+  },
+  'Foundations of Programming': {
+    fill: '#6366F1',
+    lightBg: 'bg-indigo-50',
+    border: 'border-indigo-200',
+    text: 'text-indigo-700',
+  },
+  'AI & Data Science': {
+    fill: '#8B5CF6', // Purple / Violet
+    lightBg: 'bg-purple-50',
+    border: 'border-purple-200',
+    text: 'text-purple-700',
+  },
+  'SQL Mastery': {
+    fill: '#0EA5E9', // Sky Blue
+    lightBg: 'bg-sky-50',
+    border: 'border-sky-200',
+    text: 'text-sky-700',
+  },
+  'Python Programming': {
+    fill: '#10B981', // Emerald Green
+    lightBg: 'bg-emerald-50',
+    border: 'border-emerald-200',
+    text: 'text-emerald-700',
+  },
+  'Web Development': {
+    fill: '#F59E0B', // Amber / Orange
+    lightBg: 'bg-amber-50',
+    border: 'border-amber-200',
+    text: 'text-amber-700',
+  },
+};
+
+const FALLBACK_PALETTE = [
+  { fill: '#6366F1', lightBg: 'bg-indigo-50', border: 'border-indigo-200', text: 'text-indigo-700' },
+  { fill: '#8B5CF6', lightBg: 'bg-purple-50', border: 'border-purple-200', text: 'text-purple-700' },
+  { fill: '#0EA5E9', lightBg: 'bg-sky-50', border: 'border-sky-200', text: 'text-sky-700' },
+  { fill: '#10B981', lightBg: 'bg-emerald-50', border: 'border-emerald-200', text: 'text-emerald-700' },
+  { fill: '#F59E0B', lightBg: 'bg-amber-50', border: 'border-amber-200', text: 'text-amber-700' },
+  { fill: '#EC4899', lightBg: 'bg-pink-50', border: 'border-pink-200', text: 'text-pink-700' },
+  { fill: '#14B8A6', lightBg: 'bg-teal-50', border: 'border-teal-200', text: 'text-teal-700' },
+];
+
 export default function Dashboard() {
   const { user } = useAuth();
   const navigate = useNavigate();
@@ -152,28 +201,39 @@ export default function Dashboard() {
   const freeCount = bootcampStats?.paymentBreakdown?.find((p: any) => p._id === 'Free')?.count || 100;
   const totalRevenue = paidCount * 99; // Standard ₹99 fee
 
-  // Course breakdown formatting
+  // Course breakdown formatting with distinct professional colors
   const courseData = (bootcampStats?.courseBreakdown || [
     { _id: 'Foundations Track', count: 66 },
     { _id: 'AI & Data Science', count: 17 },
     { _id: 'SQL Mastery', count: 13 },
     { _id: 'Web Development', count: 12 },
     { _id: 'Python Programming', count: 12 },
-  ]).map((c: any) => ({
-    name: c._id || 'General',
-    shortName:
-      c._id === 'Foundations Track' || c._id === 'Foundations of Programming'
+  ]).map((c: any, idx: number) => {
+    const rawName = c._id || 'General';
+    const shortName =
+      rawName === 'Foundations Track' || rawName === 'Foundations of Programming'
         ? 'Foundations'
-        : c._id === 'AI & Data Science'
+        : rawName === 'AI & Data Science'
         ? 'AI & Data Sci'
-        : c._id === 'Web Development'
+        : rawName === 'Web Development'
         ? 'Web Dev'
-        : c._id === 'Python Programming'
+        : rawName === 'Python Programming'
         ? 'Python'
-        : c._id,
-    students: c.count,
-    percentage: Math.round((c.count / totalStudents) * 100),
-  }));
+        : rawName;
+
+    const styling = COURSE_PALETTE[rawName] || FALLBACK_PALETTE[idx % FALLBACK_PALETTE.length];
+
+    return {
+      name: rawName,
+      shortName,
+      students: c.count,
+      percentage: Math.round((c.count / totalStudents) * 100),
+      color: styling.fill,
+      lightBg: styling.lightBg,
+      border: styling.border,
+      textColor: styling.text,
+    };
+  });
 
   // Donut Payment distribution data
   const paymentDonutData = [
@@ -458,7 +518,7 @@ export default function Dashboard() {
                 Course Track Enrollment Distribution
               </h2>
               <p className="text-xs text-slate-500">
-                Live registration count across all Arshith Boot Camp specialized tracks
+                Live registration count across all CodeLekho specialized tracks
               </p>
             </div>
             <span className="text-xs font-bold text-[#013A2B] bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200 shrink-0">
@@ -486,7 +546,7 @@ export default function Dashboard() {
                 <Tooltip
                   formatter={(value: any, name: any, item: any) => [
                     `${value} Students (${item.payload.percentage}%)`,
-                    'Enrollment',
+                    item.payload.name,
                   ]}
                   labelFormatter={(label, payload) => payload?.[0]?.payload?.name || label}
                   contentStyle={{
@@ -494,29 +554,44 @@ export default function Dashboard() {
                     border: '1px solid #cbd5e1',
                     fontSize: '12px',
                     boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
-                    background: '#FBF8F1',
+                    background: '#FFFFFF',
                   }}
                 />
                 <Bar
                   dataKey="students"
-                  fill="#0C2D26"
-                  radius={[6, 6, 0, 0]}
+                  radius={[8, 8, 0, 0]}
                   maxBarSize={48}
                   name="Enrolled Students"
-                />
+                >
+                  {courseData.map((entry: any, index: number) => (
+                    <Cell
+                      key={`bar-cell-${index}`}
+                      fill={entry.color}
+                      className="transition-all duration-300 hover:opacity-85 cursor-pointer"
+                    />
+                  ))}
+                </Bar>
               </BarChart>
             </ResponsiveContainer>
           </div>
 
           {/* Quick Track Chips */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 pt-2 border-t border-slate-100 text-xs">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-3 border-t border-slate-100 text-xs">
             {courseData.map((c: any) => (
               <div
                 key={c.name}
-                className="p-2 rounded-xl bg-white/80 border border-slate-200/80 flex items-center justify-between"
+                className="p-2.5 rounded-xl bg-white border border-slate-200/80 shadow-2xs flex items-center justify-between transition hover:border-slate-300"
               >
-                <span className="font-semibold text-slate-700 truncate pr-1">{c.name}</span>
-                <span className="font-bold text-[#013A2B] bg-emerald-50 px-2 py-0.5 rounded-md shrink-0">
+                <div className="flex items-center gap-2 min-w-0 pr-1">
+                  <span
+                    className="w-2.5 h-2.5 rounded-full shrink-0 shadow-xs"
+                    style={{ backgroundColor: c.color }}
+                  />
+                  <span className="font-semibold text-slate-800 truncate">{c.name}</span>
+                </div>
+                <span
+                  className={`font-bold px-2 py-0.5 rounded-md shrink-0 border ${c.lightBg} ${c.textColor} ${c.border}`}
+                >
                   {c.students}
                 </span>
               </div>
