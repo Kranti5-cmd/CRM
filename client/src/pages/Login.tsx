@@ -168,14 +168,17 @@ export default function Login() {
                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                   Email Address
                 </label>
-                <div className="relative">
-                  <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                <div className="relative flex items-center">
+                  <div className="absolute left-3.5 top-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none text-slate-400 z-10">
+                    <Mail className="w-4 h-4" />
+                  </div>
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="name@codelekho.com"
-                    className="input-field pl-10"
+                    style={{ paddingLeft: '2.75rem', paddingRight: '1rem' }}
+                    className="input-field !pl-11 !pr-4 h-[44px] text-sm"
                     autoComplete="email"
                     required
                   />
@@ -195,26 +198,30 @@ export default function Login() {
                         icon: 'ℹ️',
                       })
                     }
-                    className="text-xs font-semibold text-[#013A2B] hover:underline"
+                    className="text-xs font-semibold text-[#013A2B] hover:underline cursor-pointer"
                   >
                     Forgot password?
                   </button>
                 </div>
-                <div className="relative">
-                  <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                <div className="relative flex items-center">
+                  <div className="absolute left-3.5 top-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none text-slate-400 z-10">
+                    <Lock className="w-4 h-4" />
+                  </div>
                   <input
                     type={showPassword ? 'text' : 'password'}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="••••••••••••"
-                    className="input-field pl-10 pr-10"
+                    style={{ paddingLeft: '2.75rem', paddingRight: '2.75rem' }}
+                    className="input-field !pl-11 !pr-11 h-[44px] text-sm"
                     autoComplete="current-password"
                     required
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition"
+                    className="absolute right-3.5 top-1/2 -translate-y-1/2 p-1 text-slate-400 hover:text-slate-600 transition flex items-center justify-center cursor-pointer z-10"
+                    title={showPassword ? 'Hide password' : 'Show password'}
                   >
                     {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                   </button>
@@ -223,17 +230,17 @@ export default function Login() {
 
               {/* Remember Me */}
               <div className="flex items-center justify-between text-xs text-slate-600 pt-1">
-                <label className="flex items-center gap-2 cursor-pointer select-none">
+                <label className="flex items-center gap-2.5 cursor-pointer select-none">
                   <input
                     type="checkbox"
                     checked={rememberMe}
                     onChange={(e) => setRememberMe(e.target.checked)}
-                    className="rounded border-slate-300 text-[#013A2B] focus:ring-[#013A2B]"
+                    className="w-4 h-4 rounded border-slate-300 text-[#013A2B] focus:ring-[#013A2B] accent-[#013A2B] cursor-pointer"
                   />
-                  <span className="font-medium">Remember this browser</span>
+                  <span className="font-semibold text-slate-700">Remember this browser</span>
                 </label>
-                <span className="text-emerald-700 font-semibold flex items-center gap-1">
-                  <CheckCircle2 className="w-3.5 h-3.5" />
+                <span className="text-emerald-700 font-bold flex items-center gap-1.5 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200/80">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
                   Live Sync
                 </span>
               </div>
