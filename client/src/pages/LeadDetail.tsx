@@ -55,7 +55,7 @@ export default function LeadDetail() {
               <div className="flex items-center gap-3 text-sm"><Phone className="w-4 h-4 text-gray-400" /><span>{lead.phone}</span></div>
               <div className="flex items-center gap-3 text-sm"><Building2 className="w-4 h-4 text-gray-400" /><span>{lead.companyName}</span></div>
               <div className="flex items-center gap-3 text-sm"><IndianRupee className="w-4 h-4 text-gray-400" /><span>{lead.value ? formatCurrency(lead.value) : 'N/A'}</span></div>
-              <div className="flex items-center gap-3 text-sm"><Calendar className="w-4 h-4 text-gray-400" /><span>Created {formatDate(lead.createdAt)}</span></div>
+              <div className="flex items-center gap-3 text-sm"><Calendar className="w-4 h-4 text-gray-400" /><span>Registered {formatDate(lead.registrationDate || lead.createdAt)}</span></div>
               {lead.nextFollowUp && <div className="flex items-center gap-3 text-sm"><Clock className="w-4 h-4 text-gray-400" /><span>Follow-up: {formatDate(lead.nextFollowUp)}</span></div>}
             </div>
           </div>

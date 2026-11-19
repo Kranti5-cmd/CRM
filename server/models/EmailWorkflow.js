@@ -21,6 +21,7 @@ const emailWorkflowSchema = new mongoose.Schema(
         'course_enrolled',
         'payment_pending',
         'payment_completed',
+        'discount_offer',
         'course_starting_soon',
         'counselor_followup_needed',
         'student_inactive_7d',
@@ -49,6 +50,7 @@ const emailWorkflowSchema = new mongoose.Schema(
       type: String,
       enum: [
         'Arshith Boot Camp Students',
+        'CodeLekho Students',
         'New Registrations',
         'Interested Leads',
         'Converted Students',
@@ -62,6 +64,10 @@ const emailWorkflowSchema = new mongoose.Schema(
     isActive: {
       type: Boolean,
       default: true,
+    },
+    order: {
+      type: Number,
+      default: 0,
     },
     stats: {
       sent: { type: Number, default: 0 },

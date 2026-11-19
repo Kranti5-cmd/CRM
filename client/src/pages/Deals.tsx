@@ -82,7 +82,15 @@ export default function Deals() {
     { key: 'stage', label: 'Stage', render: (d) => <StatusBadge status={d.stage} variant="deal" /> },
     { key: 'probability', label: 'Prob.', render: (d) => `${d.probability}%` },
     { key: 'assignedTo', label: 'Assigned', render: (d) => typeof d.assignedTo === 'object' ? d.assignedTo.name : '-' },
-    { key: 'expectedCloseDate', label: 'Close Date', render: (d) => d.expectedCloseDate ? formatDate(d.expectedCloseDate) : '-' },
+    {
+      key: 'expectedCloseDate',
+      label: 'Date',
+      sortable: true,
+      render: (d) => {
+        const dateVal = d.actualCloseDate || d.expectedCloseDate || (d as any).createdAt;
+        return dateVal ? formatDate(dateVal) : '-';
+      },
+    },
     {
       key: 'actions', label: '', render: (d) => (
         <div className="flex items-center gap-1">

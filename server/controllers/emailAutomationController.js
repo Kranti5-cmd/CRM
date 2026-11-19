@@ -131,7 +131,14 @@ exports.getWorkflows = async (req, res) => {
   try {
     const workflows = await EmailWorkflow.find()
       .populate('template', 'name subject category')
-      .sort({ createdAt: 1 });
+      .sort({ order: 1, createdAt: 1 });
+
+    workflows.sort((a, b) => {
+      const ordA = typeof a.order === 'number' && a.order > 0 ? a.order : (parseInt(a.name, 10) || 999);
+      const ordB = typeof b.order === 'number' && b.order > 0 ? b.order : (parseInt(b.name, 10) || 999);
+      return ordA - ordB;
+    });
+
     res.json({ success: true, count: workflows.length, data: workflows });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
@@ -249,14 +256,21 @@ exports.triggerWorkflowForRecipient = async (req, res) => {
     }
 
     // Duplicate Send Protection (Idempotency Key)
-    const idempotencyKey = `wf_${workflow._id}_${targetEmail.toLowerCase().trim()}`;
-    const existingLog = await EmailLog.findOne({ idempotencyKey });
-    if (existingLog && existingLog.status !== 'Failed') {
-      return res.status(200).json({
-        success: true,
-        message: `Email already sent to ${targetEmail} for this workflow (Idempotency check passed).`,
-        data: existingLog
-      });
+    // For manual triggers from UI, allow re-sends by default so testing and counselor dispatches always send
+    const force = req.body.force !== false;
+    const idempotencyKey = force
+      ? `wf_${workflow._id}_${targetEmail.toLowerCase().trim()}_${Date.now()}`
+      : `wf_${workflow._id}_${targetEmail.toLowerCase().trim()}`;
+
+    if (!force) {
+      const existingLog = await EmailLog.findOne({ idempotencyKey });
+      if (existingLog && existingLog.status !== 'Failed') {
+        return res.status(200).json({
+          success: true,
+          message: `Email already sent to ${targetEmail} for this workflow (Idempotency check passed).`,
+          data: existingLog
+        });
+      }
     }
 
     // Render Template

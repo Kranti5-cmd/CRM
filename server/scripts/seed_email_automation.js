@@ -335,20 +335,73 @@ const defaultTemplates = [
       ctaUrl: 'https://arshithbootcamp.com/feedback'
     }),
     bodyText: 'Please share your feedback for {{course_name}} at CodeLekho.'
+  },
+  {
+    name: '10% Course Discount Offer',
+    subject: 'Special Offer: 10% Discount on Your CodeLekho Course Track',
+    category: 'Billing & Payment',
+    htmlContent: emailShell({
+      badge: 'EXCLUSIVE 10% DISCOUNT',
+      subtitle: 'Limited-Time Course Offer',
+      greeting: 'Hi {{student_name}},',
+      bodyHtml: `
+        <p style="margin:0 0 20px;font-size:15px;color:#334155;line-height:1.7;">
+          Take your coding career to the next level with an exclusive <strong>10% instant discount</strong> on verified CodeLekho technical tracks!
+        </p>
+
+        <!-- DISCOUNT COUPON BANNER -->
+        <div style="background:linear-gradient(135deg, #013A2B 0%, #047857 100%);border-radius:12px;padding:24px;margin:24px 0;text-align:center;color:#FFFFFF;box-shadow:0 6px 18px rgba(1,58,43,0.15);">
+          <span style="font-size:11px;text-transform:uppercase;letter-spacing:1px;font-weight:700;color:#A7F3D0;">Special Referral & Early Bird Coupon</span>
+          <div style="font-size:30px;font-weight:900;margin:8px 0;letter-spacing:2px;color:#FDE047;">COUPON: CODEL452</div>
+          <p style="margin:0;font-size:13px;color:#E6FFFA;">Use this coupon code during Cashfree checkout to get 10% OFF instantly.</p>
+        </div>
+
+        <!-- PRICING BREAKDOWN TABLE -->
+        <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-left:4px solid #10B981;border-radius:12px;padding:20px;margin:24px 0;">
+          <h3 style="margin:0 0 14px;font-size:15px;font-weight:700;color:#0F172A;">Special Discounted Course Fees:</h3>
+          <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
+            <tr style="border-bottom:1px solid #E2E8F0;">
+              <td style="padding:8px 0;font-size:13px;color:#475569;font-weight:600;">Python Programming:</td>
+              <td style="padding:8px 0;font-size:14px;text-align:right;"><span style="text-decoration:line-through;color:#94A3B8;margin-right:6px;">₹149</span><strong style="color:#047857;font-size:15px;">₹134</strong></td>
+            </tr>
+            <tr style="border-bottom:1px solid #E2E8F0;">
+              <td style="padding:8px 0;font-size:13px;color:#475569;font-weight:600;">SQL & Relational Databases:</td>
+              <td style="padding:8px 0;font-size:14px;text-align:right;"><span style="text-decoration:line-through;color:#94A3B8;margin-right:6px;">₹149</span><strong style="color:#047857;font-size:15px;">₹134</strong></td>
+            </tr>
+            <tr style="border-bottom:1px solid #E2E8F0;">
+              <td style="padding:8px 0;font-size:13px;color:#475569;font-weight:600;">Web Development:</td>
+              <td style="padding:8px 0;font-size:14px;text-align:right;"><span style="text-decoration:line-through;color:#94A3B8;margin-right:6px;">₹149</span><strong style="color:#047857;font-size:15px;">₹134</strong></td>
+            </tr>
+            <tr>
+              <td style="padding:8px 0;font-size:13px;color:#475569;font-weight:600;">AI with Data Science (Best Seller):</td>
+              <td style="padding:8px 0;font-size:14px;text-align:right;"><span style="text-decoration:line-through;color:#94A3B8;margin-right:6px;">₹199</span><strong style="color:#047857;font-size:15px;">₹179</strong></td>
+            </tr>
+          </table>
+        </div>
+
+        <p style="margin:20px 0 0;font-size:14px;color:#475569;line-height:1.6;">
+          Your coupon <strong>CODEL452</strong> unlocks verified track completion certificates, live mentor Q&A, and full project access. Enroll today before the cohort fills up!
+        </p>
+      `,
+      ctaText: 'Claim 10% Discount & Enroll Now',
+      ctaUrl: 'https://codelekho.com/courses'
+    }),
+    bodyText: 'Get 10% OFF your CodeLekho course enrollment with coupon code CODEL452. Python for ₹134, SQL for ₹134, Web Dev for ₹134, AI & Data Science for ₹179. Enroll now at https://codelekho.com/courses'
   }
 ];
 
 const workflowConfigs = [
-  { name: '1. New Student Welcome Flow', triggerEvent: 'student_registered', templateName: 'New Student Welcome Email', segment: 'New Registrations', delayHours: 0 },
-  { name: '2. Registration Confirmation Flow', triggerEvent: 'registration_confirmed', templateName: 'Registration Confirmation', segment: 'Converted Students', delayHours: 0 },
-  { name: '3. Course Information Flow', triggerEvent: 'course_enrolled', templateName: 'Course Information Email', segment: 'CodeLekho Students', delayHours: 24 },
-  { name: '4. Payment Pending Reminder Flow', triggerEvent: 'payment_pending', templateName: 'Payment Pending Reminder', segment: 'Pending Payments', delayHours: 48 },
-  { name: '5. Payment Confirmation Flow', triggerEvent: 'payment_completed', templateName: 'Payment Confirmation', segment: 'Converted Students', delayHours: 0 },
-  { name: '6. Course Starting Reminder Flow', triggerEvent: 'course_starting_soon', templateName: 'Course Starting Reminder', segment: 'CodeLekho Students', delayHours: 12 },
-  { name: '7. Counselor Follow-up Flow', triggerEvent: 'counselor_followup_needed', templateName: 'Follow-up Reminder', segment: 'Interested Leads', delayHours: 24 },
-  { name: '8. Student Re-engagement Flow', triggerEvent: 'student_inactive_7d', templateName: 'Student Re-engagement', segment: 'CodeLekho Students', delayHours: 168 },
-  { name: '9. Course Completion & Certificate Flow', triggerEvent: 'course_completed', templateName: 'Course Completion Email', segment: 'Course Completed Students', delayHours: 0 },
-  { name: '10. Student Feedback Request Flow', triggerEvent: 'feedback_request', templateName: 'Student Feedback Request', segment: 'Course Completed Students', delayHours: 72 }
+  { order: 1, name: '1. New Student Welcome Flow', triggerEvent: 'student_registered', templateName: 'New Student Welcome Email', segment: 'New Registrations', delayHours: 0 },
+  { order: 2, name: '2. Registration Confirmation Flow', triggerEvent: 'registration_confirmed', templateName: 'Registration Confirmation', segment: 'Converted Students', delayHours: 0 },
+  { order: 3, name: '3. Offer 10% Discount Flow', triggerEvent: 'discount_offer', templateName: '10% Course Discount Offer', segment: 'Pending Payments', delayHours: 24 },
+  { order: 4, name: '4. Course Information Flow', triggerEvent: 'course_enrolled', templateName: 'Course Information Email', segment: 'CodeLekho Students', delayHours: 24 },
+  { order: 5, name: '5. Payment Pending Reminder Flow', triggerEvent: 'payment_pending', templateName: 'Payment Pending Reminder', segment: 'Pending Payments', delayHours: 48 },
+  { order: 6, name: '6. Payment Confirmation Flow', triggerEvent: 'payment_completed', templateName: 'Payment Confirmation', segment: 'Converted Students', delayHours: 0 },
+  { order: 7, name: '7. Course Starting Reminder Flow', triggerEvent: 'course_starting_soon', templateName: 'Course Starting Reminder', segment: 'CodeLekho Students', delayHours: 12 },
+  { order: 8, name: '8. Counselor Follow-up Flow', triggerEvent: 'counselor_followup_needed', templateName: 'Follow-up Reminder', segment: 'Interested Leads', delayHours: 24 },
+  { order: 9, name: '9. Student Re-engagement Flow', triggerEvent: 'student_inactive_7d', templateName: 'Student Re-engagement', segment: 'CodeLekho Students', delayHours: 168 },
+  { order: 10, name: '10. Course Completion & Certificate Flow', triggerEvent: 'course_completed', templateName: 'Course Completion Email', segment: 'Course Completed Students', delayHours: 0 },
+  { order: 11, name: '11. Student Feedback Request Flow', triggerEvent: 'feedback_request', templateName: 'Student Feedback Request', segment: 'Course Completed Students', delayHours: 72 }
 ];
 
 async function seed() {
@@ -363,7 +416,7 @@ async function seed() {
     const updated = await EmailTemplate.findOneAndUpdate(
       { name: t.name },
       { ...t, createdBy: admin?._id },
-      { upsert: true, new: true }
+      { upsert: true, returnDocument: 'after' }
     );
     console.log('Updated template:', t.name);
     templateMap[t.name] = updated._id;
@@ -373,7 +426,7 @@ async function seed() {
   for (const w of workflowConfigs) {
     if (templateMap[w.templateName]) {
       await EmailWorkflow.findOneAndUpdate(
-        { name: w.name },
+        { $or: [{ triggerEvent: w.triggerEvent }, { name: w.name }] },
         {
           name: w.name,
           description: `Automated flow for ${w.triggerEvent}`,
@@ -381,10 +434,11 @@ async function seed() {
           template: templateMap[w.templateName],
           segment: w.segment,
           delayHours: w.delayHours,
+          order: w.order,
           isActive: true,
           createdBy: admin?._id
         },
-        { upsert: true, new: true }
+        { upsert: true, returnDocument: 'after' }
       );
       console.log('Updated workflow:', w.name);
     }

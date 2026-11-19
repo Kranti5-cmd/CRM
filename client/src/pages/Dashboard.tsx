@@ -194,12 +194,12 @@ export default function Dashboard() {
   }
 
   // Real Metric Numbers
-  const totalStudents = bootcampStats?.totalStudents || 120;
-  const todayRegs = bootcampStats?.todayRegistrations || 3;
-  const paidCount = bootcampStats?.paymentBreakdown?.find((p: any) => p._id === 'Paid')?.count || 6;
-  const pendingCount = bootcampStats?.paymentBreakdown?.find((p: any) => p._id === 'Pending')?.count || 14;
-  const freeCount = bootcampStats?.paymentBreakdown?.find((p: any) => p._id === 'Free')?.count || 100;
-  const totalRevenue = paidCount * 99; // Standard ₹99 fee
+  const totalStudents = bootcampStats?.totalStudents ?? 0;
+  const todayRegs = bootcampStats?.todayRegistrations ?? 0;
+  const paidCount = bootcampStats?.verifiedPaidCount ?? (bootcampStats?.paymentBreakdown?.find((p: any) => p._id === 'Paid')?.count || 0);
+  const pendingCount = bootcampStats?.paymentBreakdown?.find((p: any) => p._id === 'Pending')?.count || 0;
+  const freeCount = bootcampStats?.paymentBreakdown?.find((p: any) => p._id === 'Free')?.count || 0;
+  const totalRevenue = bootcampStats?.totalRevenue ?? (bootcampStats?.verifiedRevenue ?? 0);
 
   // Course breakdown formatting with distinct professional colors
   const courseData = (bootcampStats?.courseBreakdown || [
@@ -391,7 +391,7 @@ export default function Dashboard() {
             </span>
           </div>
           <p className="text-xs text-slate-500 mt-2 font-medium flex items-center justify-between">
-            <span>₹99 / Verified Track</span>
+            <span>Cashfree Verified Payments</span>
             <span className="text-emerald-700 font-bold group-hover:underline flex items-center">
               Deals <ChevronRight className="w-3.5 h-3.5 inline" />
             </span>
@@ -441,7 +441,7 @@ export default function Dashboard() {
           <div className="mt-3 flex items-baseline gap-2">
             <span className="text-3xl font-black text-slate-900 tracking-tight">{freeCount}</span>
             <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-bold bg-purple-100 text-purple-800">
-              82.6%
+              {totalStudents > 0 ? `${((freeCount / totalStudents) * 100).toFixed(1)}%` : '0%'}
             </span>
           </div>
           <p className="text-xs text-slate-500 mt-2 font-medium flex items-center justify-between">

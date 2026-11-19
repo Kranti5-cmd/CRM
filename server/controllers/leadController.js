@@ -14,7 +14,7 @@ exports.getLeads = async (req, res, next) => {
       source,
       priority,
       assignedTo,
-      sortBy = 'createdAt',
+      sortBy = 'registrationDate',
       sortOrder = 'desc',
     } = req.query;
 
@@ -37,6 +37,9 @@ exports.getLeads = async (req, res, next) => {
 
     const sort = {};
     sort[sortBy] = sortOrder === 'asc' ? 1 : -1;
+    if (sortBy === 'registrationDate') {
+      sort.createdAt = -1;
+    }
 
     const skip = (parseInt(page) - 1) * parseInt(limit);
     const total = await Lead.countDocuments(query);

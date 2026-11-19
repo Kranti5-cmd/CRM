@@ -1,11 +1,12 @@
 import { format, formatDistanceToNow, isValid, parseISO } from 'date-fns';
 
 export function formatCurrency(value: number): string {
+  const hasFractions = value % 1 !== 0;
   return new Intl.NumberFormat('en-IN', {
     style: 'currency',
     currency: 'INR',
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
+    minimumFractionDigits: hasFractions ? 1 : 0,
+    maximumFractionDigits: hasFractions ? 2 : 0,
   }).format(value);
 }
 
@@ -22,21 +23,37 @@ export function formatCurrencyCompact(value: number): string {
   return formatCurrency(value);
 }
 
-export function formatDate(dateStr: string): string {
-  const date = parseISO(dateStr);
-  if (!isValid(date)) return 'N/A';
+function toSafeDate(input: any): Date | null {
+  if (!input) return null;
+  if (input instanceof Date) return isValid(input) ? input : null;
+  if (typeof input === 'number') {
+    const d = new Date(input);
+    return isValid(d) ? d : null;
+  }
+  const str = String(input).trim();
+  if (!str) return null;
+  const iso = parseISO(str);
+  if (isValid(iso)) return iso;
+  const direct = new Date(str);
+  if (isValid(direct)) return direct;
+  return null;
+}
+
+export function formatDate(dateInput: any): string {
+  const date = toSafeDate(dateInput);
+  if (!date) return '-';
   return format(date, 'MMM dd, yyyy');
 }
 
-export function formatDateTime(dateStr: string): string {
-  const date = parseISO(dateStr);
-  if (!isValid(date)) return 'N/A';
+export function formatDateTime(dateInput: any): string {
+  const date = toSafeDate(dateInput);
+  if (!date) return '-';
   return format(date, 'MMM dd, yyyy h:mm a');
 }
 
-export function formatRelativeTime(dateStr: string): string {
-  const date = parseISO(dateStr);
-  if (!isValid(date)) return 'N/A';
+export function formatRelativeTime(dateInput: any): string {
+  const date = toSafeDate(dateInput);
+  if (!date) return '-';
   return formatDistanceToNow(date, { addSuffix: true });
 }
 

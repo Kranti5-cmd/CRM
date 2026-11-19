@@ -36,7 +36,7 @@ export default function Leads() {
   const [statusFilter, setStatusFilter] = useState('');
   const [sourceFilter, setSourceFilter] = useState('');
   const [priorityFilter, setPriorityFilter] = useState('');
-  const [sortBy, setSortBy] = useState('createdAt');
+  const [sortBy, setSortBy] = useState('registrationDate');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
 
   const [modalOpen, setModalOpen] = useState(false);
@@ -416,11 +416,11 @@ export default function Leads() {
 
                     <th
                       className="py-3 px-4 cursor-pointer hover:text-gray-900 transition-colors"
-                      onClick={() => handleSort('createdAt')}
+                      onClick={() => handleSort('registrationDate')}
                     >
                       <div className="flex items-center gap-1.5">
-                        <span>Created Date</span>
-                        {sortBy === 'createdAt' &&
+                        <span>Registration Date</span>
+                        {(sortBy === 'registrationDate' || sortBy === 'createdAt') &&
                           (sortOrder === 'asc' ? (
                             <ArrowUp className="w-3.5 h-3.5 text-[#013A2B]" />
                           ) : (
@@ -516,10 +516,10 @@ export default function Leads() {
                           )}
                         </td>
 
-                        {/* Created Date */}
+                        {/* Registration Date */}
                         <td className="py-3 px-4 whitespace-nowrap">
                           <span className="text-xs text-gray-500 font-medium">
-                            {formatDate(lead.createdAt)}
+                            {formatDate(lead.registrationDate || lead.createdAt)}
                           </span>
                         </td>
 

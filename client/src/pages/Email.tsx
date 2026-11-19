@@ -381,6 +381,7 @@ export default function Email() {
     try {
       const res = await api.post(`/email-automation/workflows/${triggerModal.workflow._id}/trigger`, {
         email: triggerEmail.trim(),
+        force: true,
       });
       if (res.data?.success) {
         toast.success(res.data.message || 'Workflow executed successfully!');
@@ -857,7 +858,7 @@ export default function Email() {
                 onClick={() => setActiveTab('workflows')}
                 className="text-xs font-bold text-[#013A2B] hover:underline"
               >
-                View All 10 Workflows →
+                View All {workflows.length} Workflows →
               </button>
             </div>
 
@@ -935,7 +936,9 @@ export default function Email() {
                         {idx + 1}
                       </span>
                       <div>
-                        <h3 className="text-sm font-bold text-[#013A2B]">{wf.name}</h3>
+                        <h3 className="text-sm font-bold text-[#013A2B]">
+                          {idx + 1}. {wf.name.replace(/^\d+\.\s*/, '')}
+                        </h3>
                         <div className="flex items-center gap-2 mt-0.5">
                           <span className="text-[10px] font-semibold text-[#426557] bg-[#F8F5EE] px-2 py-0.5 rounded border border-[#426557]/15">
                             Trigger: {wf.triggerEvent}
@@ -1791,6 +1794,7 @@ export default function Email() {
                 <option value="course_enrolled">Course Enrolled</option>
                 <option value="payment_pending">Payment Pending</option>
                 <option value="payment_completed">Payment Completed</option>
+                <option value="discount_offer">Offer 10% Discount</option>
                 <option value="course_starting_soon">Course Starting Soon</option>
                 <option value="counselor_followup_needed">Counselor Follow-up Needed</option>
                 <option value="student_inactive_7d">Student Inactive (7 Days)</option>
@@ -2062,6 +2066,7 @@ export default function Email() {
                 <option value="course_enrolled">Course Enrolled</option>
                 <option value="payment_pending">Payment Pending</option>
                 <option value="payment_completed">Payment Completed</option>
+                <option value="discount_offer">Offer 10% Discount</option>
                 <option value="course_starting_soon">Course Starting Soon</option>
                 <option value="counselor_followup_needed">Counselor Follow-up Needed</option>
                 <option value="student_inactive_7d">Student Inactive (7 Days)</option>
