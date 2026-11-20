@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-forest: #013A2B;
-  --color-evergreen: #0C2D26;
-  --color-warm-ivory: #FBF8F1;
-  --color-soft-cream: #F8F5EE;
-  --color-sage: #426557;
-  --color-charcoal: #302B25;
+  --color-forest: #101827;
+  --color-evergreen: #0B0F19;
+  --color-warm-ivory: #FFFFFF;
+  --color-soft-cream: #E8EDF3;
+  --color-sage: #1E293B;
+  --color-charcoal: #253142;
 
   --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 body {
-  background-color: #F8F5EE;
-  color: #302B25;
+  background-color: #E8EDF3;
+  color: #253142;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -21,47 +21,47 @@ body {
 
 /* Premium Card Styles */
 .card {
-  background: #FBF8F1;
+  background: #FFFFFF;
   border-radius: 1rem;
-  border: 1px solid rgba(66, 101, 87, 0.22);
-  box-shadow: 0 2px 4px 0 rgba(1, 58, 43, 0.03);
+  border: 1px solid rgba(221, 228, 236, 0.9);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
 }
 
 .card-hover {
-  background: #FBF8F1;
+  background: #FFFFFF;
   border-radius: 1rem;
-  border: 1px solid rgba(66, 101, 87, 0.22);
-  box-shadow: 0 2px 4px 0 rgba(1, 58, 43, 0.03);
+  border: 1px solid rgba(221, 228, 236, 0.9);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .card-hover:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px -4px rgba(1, 58, 43, 0.08), 0 4px 8px -2px rgba(1, 58, 43, 0.04);
-  border-color: #426557;
+  box-shadow: 0 12px 24px -4px rgba(37, 99, 235, 0.08), 0 4px 8px -2px rgba(0, 0, 0, 0.04);
+  border-color: #2563EB;
 }
 
 /* Buttons */
 .btn-primary {
-  background: linear-gradient(135deg, #013A2B 0%, #0C2D26 100%);
-  color: #FBF8F1;
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  color: #FFFFFF;
   padding: 0.55rem 1.15rem;
   border-radius: 0.65rem;
   font-weight: 700;
   font-size: 0.85rem;
   letter-spacing: -0.01em;
-  box-shadow: 0 4px 12px rgba(1, 58, 43, 0.25);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.28);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   cursor: pointer;
-  border: 1px solid rgba(66, 101, 87, 0.3);
+  border: 1px solid rgba(37, 99, 235, 0.4);
 }
 .btn-primary:hover {
-  box-shadow: 0 6px 16px rgba(1, 58, 43, 0.35);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.38);
   transform: translateY(-1px);
-  filter: brightness(1.1);
+  filter: brightness(1.05);
 }
 .btn-primary:disabled {
   opacity: 0.55;
@@ -70,15 +70,15 @@ body {
 }
 
 .btn-secondary {
-  background-color: #FBF8F1;
-  color: #302B25;
+  background-color: #FFFFFF;
+  color: #253142;
   padding: 0.55rem 1.15rem;
   border-radius: 0.65rem;
   font-weight: 700;
   font-size: 0.85rem;
   letter-spacing: -0.01em;
-  border: 1px solid rgba(66, 101, 87, 0.3);
-  box-shadow: 0 1px 2px rgba(48, 43, 37, 0.04);
+  border: 1px solid #DDE4EC;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
   align-items: center;
@@ -87,9 +87,9 @@ body {
   cursor: pointer;
 }
 .btn-secondary:hover {
-  background-color: #F8F5EE;
-  border-color: #426557;
-  color: #013A2B;
+  background-color: #F4F7FA;
+  border-color: #CBD5E1;
+  color: #2563EB;
 }
 
 .btn-danger {
@@ -114,16 +114,16 @@ body {
   width: 100%;
   padding: 0.55rem 0.85rem;
   border-radius: 0.65rem;
-  border: 1px solid rgba(66, 101, 87, 0.35);
+  border: 1px solid #DDE4EC;
   font-size: 0.85rem;
-  background-color: #FBF8F1;
-  color: #302B25;
+  background-color: #FFFFFF;
+  color: #253142;
   outline: none;
   transition: all 0.2s ease-in-out;
 }
 .input-field:focus {
-  border-color: #013A2B;
-  box-shadow: 0 0 0 3px rgba(1, 58, 43, 0.15);
+  border-color: #2563EB;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
   background-color: #ffffff;
 }
 
@@ -131,16 +131,16 @@ body {
   width: 100%;
   padding: 0.55rem 0.85rem;
   border-radius: 0.65rem;
-  border: 1px solid rgba(66, 101, 87, 0.35);
+  border: 1px solid #DDE4EC;
   font-size: 0.85rem;
-  background-color: #FBF8F1;
-  color: #302B25;
+  background-color: #FFFFFF;
+  color: #253142;
   outline: none;
   transition: all 0.2s ease-in-out;
 }
 .select-field:focus {
-  border-color: #013A2B;
-  box-shadow: 0 0 0 3px rgba(1, 58, 43, 0.15);
+  border-color: #2563EB;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
   background-color: #ffffff;
 }
 

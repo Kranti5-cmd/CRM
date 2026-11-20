@@ -572,11 +572,11 @@ export default function Email() {
   return (
     <div className="space-y-6 pb-12">
       {/* Top Header & Navigation */}
-      <div className="bg-[#FBF8F1] border border-[#426557]/20 rounded-2xl p-6 shadow-sm">
+      <div className="bg-[#FFFFFF] border border-[#426557]/20 rounded-2xl p-6 shadow-sm">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
           <div className="flex items-start gap-4">
-            <div className="w-14 h-14 rounded-2xl bg-[#013A2B] text-[#FBF8F1] flex items-center justify-center shadow-md shrink-0">
-              <Mail className="w-7 h-7 text-[#FBF8F1]" />
+            <div className="w-14 h-14 rounded-2xl bg-[#013A2B] text-[#FFFFFF] flex items-center justify-center shadow-md shrink-0">
+              <Mail className="w-7 h-7 text-[#FFFFFF]" />
             </div>
             <div>
               <div className="flex items-center gap-2">
@@ -595,21 +595,21 @@ export default function Email() {
             <button
               onClick={() => fetchData(true)}
               disabled={refreshing}
-              className="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-xl border border-[#426557]/30 text-[#013A2B] hover:bg-[#F8F5EE] transition-colors"
+              className="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-xl border border-[#426557]/30 text-[#013A2B] hover:bg-[#E8EDF3] transition-colors"
             >
               <RefreshCw className={`w-3.5 h-3.5 ${refreshing ? 'animate-spin' : ''}`} />
               Sync Engine
             </button>
             <button
               onClick={handleDownloadCSV}
-              className="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-xl border border-[#426557]/30 text-[#013A2B] hover:bg-[#F8F5EE] transition-colors"
+              className="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-xl border border-[#426557]/30 text-[#013A2B] hover:bg-[#E8EDF3] transition-colors"
             >
               <Download className="w-3.5 h-3.5" />
               Export CSV
             </button>
             <button
               onClick={() => setNewCampaignModal(true)}
-              className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-xl bg-[#013A2B] text-[#FBF8F1] hover:bg-[#0C2D26] shadow transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-xl bg-[#013A2B] text-[#FFFFFF] hover:bg-[#0C2D26] shadow transition-colors"
             >
               <Plus className="w-3.5 h-3.5" />
               New Campaign
@@ -635,8 +635,8 @@ export default function Email() {
                 onClick={() => setActiveTab(tab.id as any)}
                 className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all shrink-0 ${
                   active
-                    ? 'bg-[#013A2B] text-[#FBF8F1] shadow-sm'
-                    : 'text-[#426557] hover:text-[#013A2B] hover:bg-[#F8F5EE]'
+                    ? 'bg-[#013A2B] text-[#FFFFFF] shadow-sm'
+                    : 'text-[#426557] hover:text-[#013A2B] hover:bg-[#E8EDF3]'
                 }`}
               >
                 <Icon className="w-4 h-4" />
@@ -715,7 +715,7 @@ export default function Email() {
           {/* Daily Email Activity & Delivery Engine Status */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* 7-Day Bar Chart */}
-            <div className="lg:col-span-2 bg-[#FBF8F1] border border-[#426557]/20 rounded-2xl p-6 shadow-sm">
+            <div className="lg:col-span-2 bg-[#FFFFFF] border border-[#426557]/20 rounded-2xl p-6 shadow-sm">
               <div className="flex items-center justify-between mb-6">
                 <div>
                   <h3 className="text-base font-bold text-[#013A2B]">Daily Email Activity (Past 7 Days)</h3>
@@ -798,7 +798,7 @@ export default function Email() {
             </div>
 
             {/* Brevo & Daily Report Status Card */}
-            <div className="bg-[#FBF8F1] border border-[#426557]/20 rounded-2xl p-6 shadow-sm flex flex-col justify-between">
+            <div className="bg-[#FFFFFF] border border-[#426557]/20 rounded-2xl p-6 shadow-sm flex flex-col justify-between">
               <div>
                 <div className="flex items-center gap-2 mb-3">
                   <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center">
@@ -811,19 +811,19 @@ export default function Email() {
                 </div>
 
                 <div className="space-y-3 mt-4 text-xs">
-                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-[#F8F5EE] border border-[#426557]/10">
+                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-[#E8EDF3] border border-[#426557]/10">
                     <span className="text-[#302B25] font-medium">Provider Service</span>
                     <span className="font-semibold text-emerald-700">Brevo API v3 (REST)</span>
                   </div>
-                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-[#F8F5EE] border border-[#426557]/10">
+                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-[#E8EDF3] border border-[#426557]/10">
                     <span className="text-[#302B25] font-medium">Daily Report Recipient</span>
                     <span className="font-semibold text-[#013A2B]">{dailyReport?.reportTarget || 'arshithgroup141@gmail.com'}</span>
                   </div>
-                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-[#F8F5EE] border border-[#426557]/10">
+                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-[#E8EDF3] border border-[#426557]/10">
                     <span className="text-[#302B25] font-medium">Daily Report Dispatch</span>
                     <span className="font-semibold text-[#013A2B]">09:30 AM IST (Daily)</span>
                   </div>
-                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-[#F8F5EE] border border-[#426557]/10">
+                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-[#E8EDF3] border border-[#426557]/10">
                     <span className="text-[#302B25] font-medium">Live Supabase Sync</span>
                     <span className="font-semibold text-emerald-700">117 CodeLekho Students</span>
                   </div>
@@ -848,7 +848,7 @@ export default function Email() {
           </div>
 
           {/* Quick Workflow Grid (Top 4 Active) */}
-          <div className="bg-[#FBF8F1] border border-[#426557]/20 rounded-2xl p-6 shadow-sm">
+          <div className="bg-[#FFFFFF] border border-[#426557]/20 rounded-2xl p-6 shadow-sm">
             <div className="flex items-center justify-between mb-4">
               <div>
                 <h3 className="text-base font-bold text-[#013A2B]">Core Student Lifecycle Automations</h3>
@@ -866,7 +866,7 @@ export default function Email() {
               {workflows.slice(0, 4).map((wf) => (
                 <div
                   key={wf._id}
-                  className="p-4 rounded-xl bg-[#F8F5EE] border border-[#426557]/15 hover:border-[#426557] transition-all flex flex-col justify-between"
+                  className="p-4 rounded-xl bg-[#E8EDF3] border border-[#426557]/15 hover:border-[#426557] transition-all flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-2">
@@ -915,7 +915,7 @@ export default function Email() {
             </div>
             <button
               onClick={() => setNewWorkflowModal(true)}
-              className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-xl bg-[#013A2B] text-[#FBF8F1] hover:bg-[#0C2D26] shadow transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-xl bg-[#013A2B] text-[#FFFFFF] hover:bg-[#0C2D26] shadow transition-colors"
             >
               <Plus className="w-3.5 h-3.5" />
               Create Custom Workflow
@@ -927,12 +927,12 @@ export default function Email() {
             {workflows.map((wf, idx) => (
               <div
                 key={wf._id}
-                className="bg-[#FBF8F1] border border-[#426557]/20 rounded-2xl p-5 shadow-sm hover:border-[#426557] transition-all flex flex-col justify-between"
+                className="bg-[#FFFFFF] border border-[#426557]/20 rounded-2xl p-5 shadow-sm hover:border-[#426557] transition-all flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-start justify-between gap-2">
                     <div className="flex items-center gap-2.5">
-                      <span className="w-7 h-7 rounded-lg bg-[#013A2B] text-[#FBF8F1] font-bold text-xs flex items-center justify-center shrink-0">
+                      <span className="w-7 h-7 rounded-lg bg-[#013A2B] text-[#FFFFFF] font-bold text-xs flex items-center justify-center shrink-0">
                         {idx + 1}
                       </span>
                       <div>
@@ -940,10 +940,10 @@ export default function Email() {
                           {idx + 1}. {wf.name.replace(/^\d+\.\s*/, '')}
                         </h3>
                         <div className="flex items-center gap-2 mt-0.5">
-                          <span className="text-[10px] font-semibold text-[#426557] bg-[#F8F5EE] px-2 py-0.5 rounded border border-[#426557]/15">
+                          <span className="text-[10px] font-semibold text-[#426557] bg-[#E8EDF3] px-2 py-0.5 rounded border border-[#426557]/15">
                             Trigger: {wf.triggerEvent}
                           </span>
-                          <span className="text-[10px] font-semibold text-[#426557] bg-[#F8F5EE] px-2 py-0.5 rounded border border-[#426557]/15">
+                          <span className="text-[10px] font-semibold text-[#426557] bg-[#E8EDF3] px-2 py-0.5 rounded border border-[#426557]/15">
                             {wf.delayHours === 0 ? 'Immediate' : `${wf.delayHours} Hours Delay`}
                           </span>
                         </div>
@@ -968,7 +968,7 @@ export default function Email() {
                   <p className="text-xs text-[#302B25] mt-3">{wf.description}</p>
 
                   {/* Flow Diagram Mini-Step */}
-                  <div className="mt-4 p-3 rounded-xl bg-[#F8F5EE] border border-[#426557]/10 flex items-center gap-2 text-[11px] text-[#426557] overflow-x-auto no-scrollbar">
+                  <div className="mt-4 p-3 rounded-xl bg-[#E8EDF3] border border-[#426557]/10 flex items-center gap-2 text-[11px] text-[#426557] overflow-x-auto no-scrollbar">
                     <span className="font-semibold text-[#013A2B] bg-white px-2 py-1 rounded shadow-2xs shrink-0">
                       ⚡ {wf.triggerEvent}
                     </span>
@@ -997,7 +997,7 @@ export default function Email() {
                   </div>
 
                   {/* Execution Timing & Detailed Counts */}
-                  <div className="mt-3 p-3 rounded-xl bg-[#F8F5EE] border border-[#426557]/10 grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px]">
+                  <div className="mt-3 p-3 rounded-xl bg-[#E8EDF3] border border-[#426557]/10 grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px]">
                     <div>
                       <span className="text-[#426557] block text-[10px]">Total Sent</span>
                       <strong className="text-[#013A2B] font-bold text-xs">{wf.stats?.sent || 0}</strong>
@@ -1026,13 +1026,13 @@ export default function Email() {
                   <div className="flex items-center gap-1.5">
                     <button
                       onClick={() => handleViewWorkflowDetails(wf)}
-                      className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg border border-[#426557]/30 text-xs font-semibold text-[#013A2B] hover:bg-[#F8F5EE]"
+                      className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg border border-[#426557]/30 text-xs font-semibold text-[#013A2B] hover:bg-[#E8EDF3]"
                     >
                       <Eye className="w-3.5 h-3.5" /> Details & Logs
                     </button>
                     <button
                       onClick={() => handleOpenEditWorkflow(wf)}
-                      className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg border border-[#426557]/30 text-xs font-semibold text-[#013A2B] hover:bg-[#F8F5EE]"
+                      className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg border border-[#426557]/30 text-xs font-semibold text-[#013A2B] hover:bg-[#E8EDF3]"
                     >
                       Configure Trigger
                     </button>
@@ -1070,7 +1070,7 @@ export default function Email() {
               <select
                 value={templateCategoryFilter}
                 onChange={(e) => setTemplateCategoryFilter(e.target.value)}
-                className="text-xs rounded-xl border border-[#426557]/30 bg-[#FBF8F1] px-3 py-1.5 text-[#013A2B] font-semibold"
+                className="text-xs rounded-xl border border-[#426557]/30 bg-[#FFFFFF] px-3 py-1.5 text-[#013A2B] font-semibold"
               >
                 <option value="All">All Categories</option>
                 <option value="Welcome">Welcome</option>
@@ -1090,7 +1090,7 @@ export default function Email() {
             {filteredTemplates.map((tmpl) => (
               <div
                 key={tmpl._id}
-                className="bg-[#FBF8F1] border border-[#426557]/20 rounded-2xl p-5 shadow-sm hover:border-[#426557] transition-all flex flex-col justify-between"
+                className="bg-[#FFFFFF] border border-[#426557]/20 rounded-2xl p-5 shadow-sm hover:border-[#426557] transition-all flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-2">
@@ -1113,7 +1113,7 @@ export default function Email() {
                         tmpl.variables.map((v) => (
                           <span
                             key={v}
-                            className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-[#F8F5EE] border border-[#426557]/15 text-[#013A2B]"
+                            className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-[#E8EDF3] border border-[#426557]/15 text-[#013A2B]"
                           >
                             {`{{${v}}}`}
                           </span>
@@ -1141,7 +1141,7 @@ export default function Email() {
                         templateName: tmpl.name,
                       })
                     }
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#426557]/30 text-xs font-bold text-[#013A2B] hover:bg-[#F8F5EE]"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#426557]/30 text-xs font-bold text-[#013A2B] hover:bg-[#E8EDF3]"
                   >
                     <Send className="w-3 h-3" /> Send Test
                   </button>
@@ -1166,7 +1166,7 @@ export default function Email() {
             </div>
             <button
               onClick={() => setNewCampaignModal(true)}
-              className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-xl bg-[#013A2B] text-[#FBF8F1] hover:bg-[#0C2D26] shadow transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-xl bg-[#013A2B] text-[#FFFFFF] hover:bg-[#0C2D26] shadow transition-colors"
             >
               <Plus className="w-3.5 h-3.5" />
               New Campaign
@@ -1174,10 +1174,10 @@ export default function Email() {
           </div>
 
           {/* Campaigns Table */}
-          <div className="bg-[#FBF8F1] border border-[#426557]/20 rounded-2xl overflow-hidden shadow-sm">
+          <div className="bg-[#FFFFFF] border border-[#426557]/20 rounded-2xl overflow-hidden shadow-sm">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs">
-                <thead className="bg-[#F8F5EE] border-b border-[#426557]/15 text-[#426557] font-bold uppercase tracking-wider">
+                <thead className="bg-[#E8EDF3] border-b border-[#426557]/15 text-[#426557] font-bold uppercase tracking-wider">
                   <tr>
                     <th className="py-3.5 px-4">Campaign Name</th>
                     <th className="py-3.5 px-4">Subject</th>
@@ -1191,7 +1191,7 @@ export default function Email() {
                 <tbody className="divide-y divide-[#426557]/10">
                   {campaigns.length > 0 ? (
                     campaigns.map((camp) => (
-                      <tr key={camp._id} className="hover:bg-[#F8F5EE]/50 transition-colors">
+                      <tr key={camp._id} className="hover:bg-[#E8EDF3]/50 transition-colors">
                         <td className="py-3.5 px-4 font-bold text-[#013A2B]">{camp.name}</td>
                         <td className="py-3.5 px-4 text-[#302B25] max-w-xs truncate">{camp.subject}</td>
                         <td className="py-3.5 px-4">
@@ -1261,7 +1261,7 @@ export default function Email() {
                 placeholder="Search name, email, or phone..."
                 value={contactSearch}
                 onChange={(e) => setContactSearch(e.target.value)}
-                className="w-full pl-9 pr-4 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FBF8F1] focus:outline-none focus:border-[#013A2B]"
+                className="w-full pl-9 pr-4 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FFFFFF] focus:outline-none focus:border-[#013A2B]"
               />
             </div>
           </div>
@@ -1286,8 +1286,8 @@ export default function Email() {
                   onClick={() => setSubscriberSegment(seg)}
                   className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all shrink-0 flex items-center gap-1.5 ${
                     active
-                      ? 'bg-[#013A2B] text-[#FBF8F1] shadow-2xs'
-                      : 'bg-[#FBF8F1] text-[#426557] border border-[#426557]/20 hover:border-[#426557]'
+                      ? 'bg-[#013A2B] text-[#FFFFFF] shadow-2xs'
+                      : 'bg-[#FFFFFF] text-[#426557] border border-[#426557]/20 hover:border-[#426557]'
                   }`}
                 >
                   <span>{seg}</span>
@@ -1304,10 +1304,10 @@ export default function Email() {
           </div>
 
           {/* Contacts Table */}
-          <div className="bg-[#FBF8F1] border border-[#426557]/20 rounded-2xl overflow-hidden shadow-sm">
+          <div className="bg-[#FFFFFF] border border-[#426557]/20 rounded-2xl overflow-hidden shadow-sm">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs">
-                <thead className="bg-[#F8F5EE] border-b border-[#426557]/15 text-[#426557] font-bold uppercase tracking-wider">
+                <thead className="bg-[#E8EDF3] border-b border-[#426557]/15 text-[#426557] font-bold uppercase tracking-wider">
                   <tr>
                     <th className="py-3.5 px-4">Student Contact</th>
                     <th className="py-3.5 px-4">Phone</th>
@@ -1320,7 +1320,7 @@ export default function Email() {
                 <tbody className="divide-y divide-[#426557]/10">
                   {filteredSubscribers.length > 0 ? (
                     filteredSubscribers.map((sub) => (
-                      <tr key={sub._id} className="hover:bg-[#F8F5EE]/50 transition-colors">
+                      <tr key={sub._id} className="hover:bg-[#E8EDF3]/50 transition-colors">
                         <td className="py-3.5 px-4">
                           <p className="font-bold text-[#013A2B]">{sub.name || 'Student'}</p>
                           <p className="text-[11px] text-[#426557] font-mono">{sub.email}</p>
@@ -1382,7 +1382,7 @@ export default function Email() {
       {activeTab === 'reports' && (
         <div className="space-y-6">
           {/* Daily Report Summary Card */}
-          <div className="bg-[#013A2B] text-[#FBF8F1] rounded-2xl p-6 shadow-md">
+          <div className="bg-[#013A2B] text-[#FFFFFF] rounded-2xl p-6 shadow-md">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div>
                 <div className="flex items-center gap-2">
@@ -1417,7 +1417,7 @@ export default function Email() {
           </div>
 
           {/* Delivery Logs Table */}
-          <div className="bg-[#FBF8F1] border border-[#426557]/20 rounded-2xl p-6 shadow-sm">
+          <div className="bg-[#FFFFFF] border border-[#426557]/20 rounded-2xl p-6 shadow-sm">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
               <div>
                 <h3 className="text-base font-bold text-[#013A2B]">Email Activity & Delivery Logs</h3>
@@ -1429,7 +1429,7 @@ export default function Email() {
                 <select
                   value={logStatusFilter}
                   onChange={(e) => setLogStatusFilter(e.target.value)}
-                  className="text-xs rounded-xl border border-[#426557]/30 bg-[#FBF8F1] px-3 py-1.5 text-[#013A2B] font-semibold"
+                  className="text-xs rounded-xl border border-[#426557]/30 bg-[#FFFFFF] px-3 py-1.5 text-[#013A2B] font-semibold"
                 >
                   <option value="All">All Statuses</option>
                   <option value="Delivered">Delivered</option>
@@ -1441,7 +1441,7 @@ export default function Email() {
                 </select>
                 <button
                   onClick={handleDownloadCSV}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[#426557]/30 text-xs font-bold text-[#013A2B] hover:bg-[#F8F5EE]"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[#426557]/30 text-xs font-bold text-[#013A2B] hover:bg-[#E8EDF3]"
                 >
                   <Download className="w-3.5 h-3.5" /> CSV
                 </button>
@@ -1450,7 +1450,7 @@ export default function Email() {
 
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs">
-                <thead className="bg-[#F8F5EE] border-b border-[#426557]/15 text-[#426557] font-bold uppercase tracking-wider">
+                <thead className="bg-[#E8EDF3] border-b border-[#426557]/15 text-[#426557] font-bold uppercase tracking-wider">
                   <tr>
                     <th className="py-3 px-3">Recipient</th>
                     <th className="py-3 px-3">Subject</th>
@@ -1463,7 +1463,7 @@ export default function Email() {
                 <tbody className="divide-y divide-[#426557]/10">
                   {filteredLogs.length > 0 ? (
                     filteredLogs.map((l) => (
-                      <tr key={l._id} className="hover:bg-[#F8F5EE]/50 transition-colors">
+                      <tr key={l._id} className="hover:bg-[#E8EDF3]/50 transition-colors">
                         <td className="py-3 px-3">
                           <p className="font-bold text-[#013A2B]">{l.recipientName || 'Student'}</p>
                           <p className="text-[11px] text-[#426557] font-mono">{l.recipientEmail}</p>
@@ -1525,7 +1525,7 @@ export default function Email() {
           size="lg"
         >
           <div className="space-y-4">
-            <div className="p-3 rounded-xl bg-[#F8F5EE] border border-[#426557]/15 text-xs text-[#426557]">
+            <div className="p-3 rounded-xl bg-[#E8EDF3] border border-[#426557]/15 text-xs text-[#426557]">
               <p>
                 <strong>Subject:</strong> {previewTemplate.subject}
               </p>
@@ -1552,7 +1552,7 @@ export default function Email() {
             <div className="flex justify-end gap-2 pt-2">
               <button
                 onClick={() => setPreviewTemplate(null)}
-                className="px-4 py-2 text-xs font-semibold rounded-xl border border-[#426557]/30 text-[#013A2B] hover:bg-[#F8F5EE]"
+                className="px-4 py-2 text-xs font-semibold rounded-xl border border-[#426557]/30 text-[#013A2B] hover:bg-[#E8EDF3]"
               >
                 Close Preview
               </button>
@@ -1584,7 +1584,7 @@ export default function Email() {
                 value={testEmailAddress}
                 onChange={(e) => setTestEmailAddress(e.target.value)}
                 placeholder="you@company.com"
-                className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FBF8F1] focus:outline-none focus:border-[#013A2B]"
+                className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FFFFFF] focus:outline-none focus:border-[#013A2B]"
               />
             </div>
 
@@ -1592,7 +1592,7 @@ export default function Email() {
               <button
                 type="button"
                 onClick={() => setTestEmailModal({ open: false, templateId: '', templateName: '' })}
-                className="px-4 py-2 text-xs font-semibold rounded-xl border border-[#426557]/30 text-[#013A2B] hover:bg-[#F8F5EE]"
+                className="px-4 py-2 text-xs font-semibold rounded-xl border border-[#426557]/30 text-[#013A2B] hover:bg-[#E8EDF3]"
               >
                 Cancel
               </button>
@@ -1620,7 +1620,7 @@ export default function Email() {
           size="md"
         >
           <form onSubmit={handleRunWorkflowTrigger} className="space-y-4">
-            <div className="p-3 rounded-xl bg-[#F8F5EE] border border-[#426557]/15 text-xs text-[#426557]">
+            <div className="p-3 rounded-xl bg-[#E8EDF3] border border-[#426557]/15 text-xs text-[#426557]">
               <p>
                 <strong>Trigger Event:</strong> {triggerModal.workflow.triggerEvent}
               </p>
@@ -1640,7 +1640,7 @@ export default function Email() {
                 value={triggerEmail}
                 onChange={(e) => setTriggerEmail(e.target.value)}
                 placeholder="student@example.com"
-                className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FBF8F1] focus:outline-none focus:border-[#013A2B]"
+                className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FFFFFF] focus:outline-none focus:border-[#013A2B]"
               />
               <p className="text-[11px] text-[#426557] mt-1">
                 Enter an existing student email from CRM (or a test email) to dispatch this lifecycle flow.
@@ -1651,7 +1651,7 @@ export default function Email() {
               <button
                 type="button"
                 onClick={() => setTriggerModal({ open: false, workflow: null })}
-                className="px-4 py-2 text-xs font-semibold rounded-xl border border-[#426557]/30 text-[#013A2B] hover:bg-[#F8F5EE]"
+                className="px-4 py-2 text-xs font-semibold rounded-xl border border-[#426557]/30 text-[#013A2B] hover:bg-[#E8EDF3]"
               >
                 Cancel
               </button>
@@ -1687,7 +1687,7 @@ export default function Email() {
                 value={campaignForm.name}
                 onChange={(e) => setCampaignForm({ ...campaignForm, name: e.target.value })}
                 placeholder="e.g. November Cohort Admission Open"
-                className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FBF8F1] focus:outline-none focus:border-[#013A2B]"
+                className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FFFFFF] focus:outline-none focus:border-[#013A2B]"
               />
             </div>
 
@@ -1699,7 +1699,7 @@ export default function Email() {
                 value={campaignForm.subject}
                 onChange={(e) => setCampaignForm({ ...campaignForm, subject: e.target.value })}
                 placeholder="e.g. Special Tech Announcement from Arshith Boot Camp"
-                className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FBF8F1] focus:outline-none focus:border-[#013A2B]"
+                className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FFFFFF] focus:outline-none focus:border-[#013A2B]"
               />
             </div>
 
@@ -1709,7 +1709,7 @@ export default function Email() {
                 required
                 value={campaignForm.template}
                 onChange={(e) => setCampaignForm({ ...campaignForm, template: e.target.value })}
-                className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FBF8F1] focus:outline-none focus:border-[#013A2B]"
+                className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FFFFFF] focus:outline-none focus:border-[#013A2B]"
               >
                 <option value="">Select a template...</option>
                 {templates.map((t) => (
@@ -1725,7 +1725,7 @@ export default function Email() {
               <select
                 value={campaignForm.segment}
                 onChange={(e) => setCampaignForm({ ...campaignForm, segment: e.target.value })}
-                className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FBF8F1] focus:outline-none focus:border-[#013A2B]"
+                className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FFFFFF] focus:outline-none focus:border-[#013A2B]"
               >
                 <option value="Arshith Boot Camp Students">Arshith Boot Camp Students</option>
                 <option value="New Registrations">New Registrations</option>
@@ -1742,7 +1742,7 @@ export default function Email() {
               <button
                 type="button"
                 onClick={() => setNewCampaignModal(false)}
-                className="px-4 py-2 text-xs font-semibold rounded-xl border border-[#426557]/30 text-[#013A2B] hover:bg-[#F8F5EE]"
+                className="px-4 py-2 text-xs font-semibold rounded-xl border border-[#426557]/30 text-[#013A2B] hover:bg-[#E8EDF3]"
               >
                 Cancel
               </button>
@@ -1778,7 +1778,7 @@ export default function Email() {
                 value={workflowForm.name}
                 onChange={(e) => setWorkflowForm({ ...workflowForm, name: e.target.value })}
                 placeholder="e.g. VIP Student Welcome Journey"
-                className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FBF8F1] focus:outline-none focus:border-[#013A2B]"
+                className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FFFFFF] focus:outline-none focus:border-[#013A2B]"
               />
             </div>
 
@@ -1787,7 +1787,7 @@ export default function Email() {
               <select
                 value={workflowForm.triggerEvent}
                 onChange={(e) => setWorkflowForm({ ...workflowForm, triggerEvent: e.target.value })}
-                className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FBF8F1] focus:outline-none focus:border-[#013A2B]"
+                className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FFFFFF] focus:outline-none focus:border-[#013A2B]"
               >
                 <option value="student_registered">Student Registered</option>
                 <option value="registration_confirmed">Registration Confirmed</option>
@@ -1810,7 +1810,7 @@ export default function Email() {
                 required
                 value={workflowForm.template}
                 onChange={(e) => setWorkflowForm({ ...workflowForm, template: e.target.value })}
-                className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FBF8F1] focus:outline-none focus:border-[#013A2B]"
+                className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FFFFFF] focus:outline-none focus:border-[#013A2B]"
               >
                 <option value="">Select a template...</option>
                 {templates.map((t) => (
@@ -1829,7 +1829,7 @@ export default function Email() {
                   min="0"
                   value={workflowForm.delayHours}
                   onChange={(e) => setWorkflowForm({ ...workflowForm, delayHours: Number(e.target.value) })}
-                  className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FBF8F1] focus:outline-none focus:border-[#013A2B]"
+                  className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FFFFFF] focus:outline-none focus:border-[#013A2B]"
                 />
               </div>
 
@@ -1838,7 +1838,7 @@ export default function Email() {
                 <select
                   value={workflowForm.segment}
                   onChange={(e) => setWorkflowForm({ ...workflowForm, segment: e.target.value })}
-                  className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FBF8F1] focus:outline-none focus:border-[#013A2B]"
+                  className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FFFFFF] focus:outline-none focus:border-[#013A2B]"
                 >
                   <option value="Arshith Boot Camp Students">Arshith Boot Camp Students</option>
                   <option value="New Registrations">New Registrations</option>
@@ -1868,7 +1868,7 @@ export default function Email() {
               <button
                 type="button"
                 onClick={() => setNewWorkflowModal(false)}
-                className="px-4 py-2 text-xs font-semibold rounded-xl border border-[#426557]/30 text-[#013A2B] hover:bg-[#F8F5EE]"
+                className="px-4 py-2 text-xs font-semibold rounded-xl border border-[#426557]/30 text-[#013A2B] hover:bg-[#E8EDF3]"
               >
                 Cancel
               </button>
@@ -1897,7 +1897,7 @@ export default function Email() {
         >
           <div className="space-y-5">
             {/* Header info banner */}
-            <div className="p-4 rounded-xl bg-[#F8F5EE] border border-[#426557]/15">
+            <div className="p-4 rounded-xl bg-[#E8EDF3] border border-[#426557]/15">
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#013A2B]/10 text-[#013A2B]">
@@ -1954,7 +1954,7 @@ export default function Email() {
               ) : detailModal.executions.length > 0 ? (
                 <div className="border border-[#426557]/20 rounded-xl overflow-hidden max-h-64 overflow-y-auto">
                   <table className="w-full text-left text-xs">
-                    <thead className="bg-[#F8F5EE] border-b border-[#426557]/15 text-[#426557] font-semibold text-[11px]">
+                    <thead className="bg-[#E8EDF3] border-b border-[#426557]/15 text-[#426557] font-semibold text-[11px]">
                       <tr>
                         <th className="py-2.5 px-3">Recipient</th>
                         <th className="py-2.5 px-3">Status</th>
@@ -1965,7 +1965,7 @@ export default function Email() {
                     </thead>
                     <tbody className="divide-y divide-[#426557]/10">
                       {detailModal.executions.map((ex: any) => (
-                        <tr key={ex._id} className="hover:bg-[#F8F5EE]/40">
+                        <tr key={ex._id} className="hover:bg-[#E8EDF3]/40">
                           <td className="py-2 px-3 font-medium text-[#013A2B]">
                             {ex.recipientName || 'Student'}
                             <span className="block text-[10px] text-[#426557] font-mono">{ex.recipientEmail}</span>
@@ -2008,7 +2008,7 @@ export default function Email() {
                   </table>
                 </div>
               ) : (
-                <div className="p-6 text-center text-xs text-[#426557] bg-[#F8F5EE] rounded-xl border border-[#426557]/10">
+                <div className="p-6 text-center text-xs text-[#426557] bg-[#E8EDF3] rounded-xl border border-[#426557]/10">
                   No execution records yet for this workflow. Use "Test Run" to trigger.
                 </div>
               )}
@@ -2017,7 +2017,7 @@ export default function Email() {
             <div className="flex justify-end gap-2 pt-2 border-t border-[#426557]/15">
               <button
                 onClick={() => setDetailModal({ open: false, workflow: null, executions: [], loading: false })}
-                className="px-4 py-2 text-xs font-semibold rounded-xl border border-[#426557]/30 text-[#013A2B] hover:bg-[#F8F5EE]"
+                className="px-4 py-2 text-xs font-semibold rounded-xl border border-[#426557]/30 text-[#013A2B] hover:bg-[#E8EDF3]"
               >
                 Close
               </button>
@@ -2050,7 +2050,7 @@ export default function Email() {
                 required
                 value={editModal.form.name}
                 onChange={(e) => setEditModal({ ...editModal, form: { ...editModal.form, name: e.target.value } })}
-                className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FBF8F1] focus:outline-none focus:border-[#013A2B]"
+                className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FFFFFF] focus:outline-none focus:border-[#013A2B]"
               />
             </div>
 
@@ -2059,7 +2059,7 @@ export default function Email() {
               <select
                 value={editModal.form.triggerEvent}
                 onChange={(e) => setEditModal({ ...editModal, form: { ...editModal.form, triggerEvent: e.target.value } })}
-                className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FBF8F1] focus:outline-none focus:border-[#013A2B]"
+                className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FFFFFF] focus:outline-none focus:border-[#013A2B]"
               >
                 <option value="student_registered">Student Registered</option>
                 <option value="registration_confirmed">Registration Confirmed</option>
@@ -2082,7 +2082,7 @@ export default function Email() {
                 required
                 value={editModal.form.template}
                 onChange={(e) => setEditModal({ ...editModal, form: { ...editModal.form, template: e.target.value } })}
-                className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FBF8F1] focus:outline-none focus:border-[#013A2B]"
+                className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FFFFFF] focus:outline-none focus:border-[#013A2B]"
               >
                 <option value="">Select a template...</option>
                 {templates.map((t) => (
@@ -2101,7 +2101,7 @@ export default function Email() {
                   min="0"
                   value={editModal.form.delayHours}
                   onChange={(e) => setEditModal({ ...editModal, form: { ...editModal.form, delayHours: Number(e.target.value) } })}
-                  className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FBF8F1] focus:outline-none focus:border-[#013A2B]"
+                  className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FFFFFF] focus:outline-none focus:border-[#013A2B]"
                 />
               </div>
 
@@ -2110,7 +2110,7 @@ export default function Email() {
                 <select
                   value={editModal.form.segment}
                   onChange={(e) => setEditModal({ ...editModal, form: { ...editModal.form, segment: e.target.value } })}
-                  className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FBF8F1] focus:outline-none focus:border-[#013A2B]"
+                  className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FFFFFF] focus:outline-none focus:border-[#013A2B]"
                 >
                   <option value="Arshith Boot Camp Students">Arshith Boot Camp Students</option>
                   <option value="New Registrations">New Registrations</option>
@@ -2130,7 +2130,7 @@ export default function Email() {
                 rows={2}
                 value={editModal.form.description}
                 onChange={(e) => setEditModal({ ...editModal, form: { ...editModal.form, description: e.target.value } })}
-                className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FBF8F1] focus:outline-none focus:border-[#013A2B]"
+                className="w-full px-3 py-2 text-xs rounded-xl border border-[#426557]/30 bg-[#FFFFFF] focus:outline-none focus:border-[#013A2B]"
               />
             </div>
 
@@ -2144,7 +2144,7 @@ export default function Email() {
                     form: { name: '', description: '', triggerEvent: '', delayHours: 0, template: '', segment: '' },
                   })
                 }
-                className="px-4 py-2 text-xs font-semibold rounded-xl border border-[#426557]/30 text-[#013A2B] hover:bg-[#F8F5EE]"
+                className="px-4 py-2 text-xs font-semibold rounded-xl border border-[#426557]/30 text-[#013A2B] hover:bg-[#E8EDF3]"
               >
                 Cancel
               </button>

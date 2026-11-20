@@ -253,7 +253,7 @@ export default function Pipeline() {
       {/* ========================================================================= */}
       {/* 1. TOP HEADER & ADMISSIONS SUMMARY BAR                                   */}
       {/* ========================================================================= */}
-      <div className="bg-[#FBF8F1] rounded-2xl border border-[#426557]/25 shadow-xs p-5 md:p-6 transition-all">
+      <div className="bg-[#FFFFFF] rounded-2xl border border-[#426557]/25 shadow-xs p-5 md:p-6 transition-all">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-5">
           <div>
             <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 mb-1">

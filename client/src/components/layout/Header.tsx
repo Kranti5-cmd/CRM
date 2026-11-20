@@ -231,7 +231,7 @@ export default function Header({ onMenuClick }: HeaderProps) {
   };
 
   return (
-    <header className="shrink-0 w-full z-30 bg-[#FBF8F1] border-b border-[#426557]/20">
+    <header className="shrink-0 w-full z-30 bg-[#E8EDF3] border-b border-[#DDE4EC]">
       <div className="flex items-center justify-between h-18 px-4 lg:px-8">
         {/* Left: Mobile Menu & Breadcrumbs */}
         <div className="flex items-center gap-3">
@@ -267,7 +267,7 @@ export default function Header({ onMenuClick }: HeaderProps) {
               }}
               onKeyDown={handleGlobalSearchKeyDown}
               placeholder="Search students, leads, courses, tickets (Ctrl + K)..."
-              className="w-full pl-10 pr-16 py-2 bg-[#F8F5EE] focus:bg-white text-xs font-semibold rounded-xl border border-sage/30 focus:border-forest text-charcoal outline-none transition-all placeholder:text-sage/70 shadow-2xs"
+              className="w-full pl-10 pr-16 py-2 bg-[#E8EDF3] focus:bg-white text-xs font-semibold rounded-xl border border-sage/30 focus:border-forest text-charcoal outline-none transition-all placeholder:text-sage/70 shadow-2xs"
             />
             {globalSearch ? (
               <button
@@ -470,7 +470,7 @@ export default function Header({ onMenuClick }: HeaderProps) {
                 setProfileOpen(false);
                 if (!notifOpen) fetchNotifications();
               }}
-              className="relative p-2.5 rounded-xl border border-sage/30 bg-[#FBF8F1] text-forest hover:bg-forest/5 transition-colors cursor-pointer"
+              className="relative p-2.5 rounded-xl border border-sage/30 bg-[#FFFFFF] text-forest hover:bg-forest/5 transition-colors cursor-pointer"
               title="Notifications"
             >
               <Bell className="w-4 h-4" />

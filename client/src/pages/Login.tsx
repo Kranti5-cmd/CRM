@@ -50,7 +50,7 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen w-full flex bg-[#F8F5EE]">
+    <div className="min-h-screen w-full flex bg-[#E8EDF3]">
       {/* ========================================================================= */}
       {/* LEFT SHOWCASE PANEL (Visible on lg+ screens)                             */}
       {/* ========================================================================= */}
@@ -161,7 +161,7 @@ export default function Login() {
           </div>
 
           {/* Login Card */}
-          <div className="bg-[#FBF8F1] rounded-2xl border border-[#426557]/25 p-7 sm:p-8 shadow-xs space-y-5">
+          <div className="bg-[#FFFFFF] rounded-2xl border border-[#426557]/25 p-7 sm:p-8 shadow-xs space-y-5">
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Email Input */}
               <div>

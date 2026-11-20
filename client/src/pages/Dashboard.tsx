@@ -262,7 +262,7 @@ export default function Dashboard() {
       {/* ========================================================================= */}
       {/* 1. TOP EXECUTIVE HEADER & REAL-TIME TELEMETRY STATUS BAR                  */}
       {/* ========================================================================= */}
-      <div className="bg-[#FBF8F1] rounded-2xl border border-[#426557]/20 shadow-xs p-5 md:p-6 transition-all">
+      <div className="bg-[#FFFFFF] rounded-2xl border border-[#426557]/20 shadow-xs p-5 md:p-6 transition-all">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-5">
           <div>
             <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 mb-1.5">
@@ -461,7 +461,7 @@ export default function Dashboard() {
           onClick={() => setActiveTab('overview')}
           className={`px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 cursor-pointer ${
             activeTab === 'overview'
-              ? 'bg-[#013A2B] text-[#FBF8F1] shadow-xs'
+              ? 'bg-[#013A2B] text-[#FFFFFF] shadow-xs'
               : 'text-slate-600 hover:bg-slate-100'
           }`}
         >
@@ -473,7 +473,7 @@ export default function Dashboard() {
           onClick={() => setActiveTab('courses')}
           className={`px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 cursor-pointer ${
             activeTab === 'courses'
-              ? 'bg-[#013A2B] text-[#FBF8F1] shadow-xs'
+              ? 'bg-[#013A2B] text-[#FFFFFF] shadow-xs'
               : 'text-slate-600 hover:bg-slate-100'
           }`}
         >
@@ -485,7 +485,7 @@ export default function Dashboard() {
           onClick={() => setActiveTab('counseling')}
           className={`px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 cursor-pointer ${
             activeTab === 'counseling'
-              ? 'bg-[#013A2B] text-[#FBF8F1] shadow-xs'
+              ? 'bg-[#013A2B] text-[#FFFFFF] shadow-xs'
               : 'text-slate-600 hover:bg-slate-100'
           }`}
         >
@@ -497,7 +497,7 @@ export default function Dashboard() {
           onClick={() => setActiveTab('support')}
           className={`px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 cursor-pointer ${
             activeTab === 'support'
-              ? 'bg-[#013A2B] text-[#FBF8F1] shadow-xs'
+              ? 'bg-[#013A2B] text-[#FFFFFF] shadow-xs'
               : 'text-slate-600 hover:bg-slate-100'
           }`}
         >
@@ -636,7 +636,7 @@ export default function Dashboard() {
                       borderRadius: '12px',
                       border: '1px solid #cbd5e1',
                       fontSize: '12px',
-                      background: '#FBF8F1',
+                      background: '#FFFFFF',
                     }}
                   />
                 </PieChart>
@@ -729,7 +729,7 @@ export default function Dashboard() {
                     borderRadius: '10px',
                     border: '1px solid #cbd5e1',
                     fontSize: '12px',
-                    background: '#FBF8F1',
+                    background: '#FFFFFF',
                   }}
                 />
                 <Area

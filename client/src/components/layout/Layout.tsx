@@ -9,7 +9,7 @@ export default function Layout() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <div className="h-screen flex overflow-hidden bg-[#F8F5EE]">
+    <div className="h-screen flex overflow-hidden bg-[#E8EDF3]">
       <Sidebar
         collapsed={collapsed}
         onToggle={() => setCollapsed(!collapsed)}

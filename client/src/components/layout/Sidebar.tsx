@@ -43,24 +43,24 @@ export default function Sidebar({ collapsed, onToggle, mobileOpen, onMobileClose
       )}
       <aside
         className={cn(
-          'fixed top-0 left-0 h-full bg-[#013A2B] text-warm-ivory border-r border-[#426557]/30 z-50 flex flex-col transition-all duration-300 select-none shadow-xl',
+          'fixed top-0 left-0 h-full bg-[#101827] text-slate-300 border-r border-[#1E293B] z-50 flex flex-col transition-all duration-300 select-none shadow-xl',
           collapsed ? 'w-[76px]' : 'w-64',
           'lg:translate-x-0',
           mobileOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         )}
       >
         {/* Brand Header */}
-        <div className={cn('flex items-center h-18 px-5 border-b border-[#426557]/40 bg-[#0C2D26]/60', collapsed ? 'justify-center' : 'justify-between')}>
+        <div className={cn('flex items-center h-18 px-5 border-b border-[#1E293B] bg-[#0B0F19]/90', collapsed ? 'justify-center' : 'justify-between')}>
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-xl bg-warm-ivory text-forest flex items-center justify-center font-black shadow-md">
-              <Leaf className="w-4 h-4 fill-forest" />
+            <div className="w-12 h-9 rounded-xl bg-white flex items-center justify-center p-0.5 border border-slate-700/60 overflow-hidden shadow-md shrink-0">
+              <img src="/logos/codelekho-logo.png" alt="CodeLekho" className="w-full h-full object-contain" />
             </div>
             {!collapsed && (
               <div>
-                <span className="text-base font-black tracking-tight text-warm-ivory uppercase">
-                  CRM<span className="text-[#a3b899]">HUB</span>
+                <span className="text-sm font-extrabold tracking-tight text-white uppercase font-sans">
+                  Code<span className="text-blue-400">Lekho</span>
                 </span>
-                <span className="block text-[9px] font-bold text-warm-ivory/60 tracking-wider uppercase">Enterprise Edition</span>
+                <span className="block text-[9px] font-bold text-slate-400 tracking-wider uppercase font-mono">CRM & LMS OS</span>
               </div>
             )}
           </div>
@@ -76,15 +76,15 @@ export default function Sidebar({ collapsed, onToggle, mobileOpen, onMobileClose
               onClick={onMobileClose}
               className={({ isActive }) =>
                 cn(
-                  'flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all',
+                  'flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all',
                   collapsed && 'justify-center px-2',
                   isActive
-                    ? 'bg-[#0C2D26] text-warm-ivory border border-[#426557] shadow-sm'
-                    : 'text-warm-ivory/80 hover:bg-[#0C2D26]/70 hover:text-warm-ivory'
+                    ? 'bg-blue-600/20 text-white font-bold border-l-4 border-blue-500 shadow-xs'
+                    : 'text-slate-400 hover:bg-slate-800/60 hover:text-white'
                 )
               }
             >
-              <LayoutDashboard className="w-4 h-4 text-warm-ivory" />
+              <LayoutDashboard className="w-4 h-4 text-blue-400" />
               {!collapsed && <span>Executive Dashboard</span>}
             </NavLink>
           </div>
@@ -92,7 +92,7 @@ export default function Sidebar({ collapsed, onToggle, mobileOpen, onMobileClose
           {/* Core 7 Modules */}
           <div>
             {!collapsed && (
-              <p className="px-3.5 mb-2 text-[10px] font-extrabold uppercase tracking-wider text-warm-ivory/50">
+              <p className="px-3.5 mb-2 text-[10px] font-extrabold uppercase tracking-wider text-slate-400 font-mono">
                 Core Modules (1 to 7)
               </p>
             )}
@@ -107,15 +107,15 @@ export default function Sidebar({ collapsed, onToggle, mobileOpen, onMobileClose
                       'flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-semibold transition-all group',
                       collapsed && 'justify-center px-2',
                       isActive
-                        ? 'bg-[#0C2D26] text-warm-ivory font-bold border border-[#426557] shadow-xs'
-                        : 'text-warm-ivory/70 hover:text-warm-ivory hover:bg-[#0C2D26]/50'
+                        ? 'bg-blue-600/20 text-white font-bold border-l-4 border-blue-500 shadow-xs'
+                        : 'text-slate-400 hover:text-white hover:bg-slate-800/60'
                     )
                   }
                 >
                   <span
                     className={cn(
                       'w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-black flex-shrink-0',
-                      'bg-[#0C2D26] text-warm-ivory/90 group-hover:bg-[#426557]'
+                      'bg-slate-800 text-slate-300 group-hover:bg-slate-700'
                     )}
                   >
                     {m.num}
@@ -129,7 +129,7 @@ export default function Sidebar({ collapsed, onToggle, mobileOpen, onMobileClose
           {/* Secondary Links */}
           <div>
             {!collapsed && (
-              <p className="px-3.5 mb-2 text-[10px] font-extrabold uppercase tracking-wider text-warm-ivory/50">
+              <p className="px-3.5 mb-2 text-[10px] font-extrabold uppercase tracking-wider text-slate-400 font-mono">
                 Tools & Workspaces
               </p>
             )}
@@ -141,13 +141,13 @@ export default function Sidebar({ collapsed, onToggle, mobileOpen, onMobileClose
                   onClick={onMobileClose}
                   className={({ isActive }) =>
                     cn(
-                      'flex items-center gap-3 px-3.5 py-2 rounded-xl text-xs font-medium transition text-warm-ivory/60 hover:text-warm-ivory hover:bg-[#0C2D26]/40',
+                      'flex items-center gap-3 px-3.5 py-2 rounded-xl text-xs font-medium transition text-slate-400 hover:text-white hover:bg-slate-800/60',
                       collapsed && 'justify-center px-2',
-                      isActive && 'text-warm-ivory font-bold bg-[#0C2D26] border border-[#426557]/60'
+                      isActive && 'text-white font-bold bg-blue-600/20 border-l-4 border-blue-500'
                     )
                   }
                 >
-                  <item.icon className="w-3.5 h-3.5 text-warm-ivory/50" />
+                  <item.icon className="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-400" />
                   {!collapsed && <span className="truncate">{item.title}</span>}
                 </NavLink>
               ))}
@@ -156,21 +156,21 @@ export default function Sidebar({ collapsed, onToggle, mobileOpen, onMobileClose
         </nav>
 
         {/* Footer User Info */}
-        <div className="border-t border-[#426557]/40 p-3 bg-[#0C2D26]/80 flex items-center justify-between">
+        <div className="border-t border-[#1E293B] p-3 bg-[#0B0F19]/80 flex items-center justify-between">
           {!collapsed ? (
             <>
               <div className="flex items-center gap-2.5 min-w-0">
-                <div className="w-8 h-8 rounded-full bg-warm-ivory text-forest flex items-center justify-center font-black text-xs shadow-xs">
+                <div className="w-8 h-8 rounded-full bg-slate-800 text-white flex items-center justify-center font-black text-xs shadow-xs border border-slate-700">
                   {user ? getInitials(user.name) : 'U'}
                 </div>
                 <div className="min-w-0">
-                  <p className="text-xs font-bold text-warm-ivory truncate leading-tight">{user?.name}</p>
-                  <p className="text-[10px] text-warm-ivory/60 truncate leading-tight">{user?.role}</p>
+                  <p className="text-xs font-bold text-white truncate leading-tight">{user?.name}</p>
+                  <p className="text-[10px] text-slate-400 truncate leading-tight">{user?.role}</p>
                 </div>
               </div>
               <button
                 onClick={logout}
-                className="p-1.5 rounded-lg text-warm-ivory/60 hover:text-red-400 hover:bg-black/20 transition"
+                className="p-1.5 rounded-lg text-slate-400 hover:text-red-400 hover:bg-slate-800 transition"
                 title="Logout"
               >
                 <LogOut className="w-4 h-4" />
@@ -179,7 +179,7 @@ export default function Sidebar({ collapsed, onToggle, mobileOpen, onMobileClose
           ) : (
             <button
               onClick={logout}
-              className="w-8 h-8 mx-auto rounded-full bg-warm-ivory text-forest flex items-center justify-center font-black text-xs"
+              className="w-8 h-8 mx-auto rounded-full bg-slate-800 text-white flex items-center justify-center font-black text-xs"
             >
               {user ? getInitials(user.name) : 'U'}
             </button>
